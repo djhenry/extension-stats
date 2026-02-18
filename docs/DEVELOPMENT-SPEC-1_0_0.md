@@ -102,12 +102,12 @@ graph LR
 | C16 | formatPercent | 6.6 | S2 | `packages/shared/src/format.ts` | (same as C15) | ✅ Done |
 | C17 | formatUptime | 6.6 | S2 | `packages/shared/src/format.ts` | (same as C15) | ✅ Done |
 | C18 | Shared index.ts | 14 | S2 | `packages/shared/src/index.ts` | N/A | ✅ Done |
-| C19 | Mock stats fixtures | 15.2 | S3 | `packages/backend/src/__tests__/fixtures.ts` | N/A (test infra) | Pending |
-| C20 | computeCpuPercent | 6.1 | S3 | `packages/backend/src/stats-calculator.ts` | `packages/backend/src/__tests__/stats-calculator.test.ts` | Pending |
-| C21 | computeMemoryUsage | 6.2 | S3 | `packages/backend/src/stats-calculator.ts` | (same as C20) | Pending |
-| C22 | computeNetworkIO | 6.3 | S3 | `packages/backend/src/stats-calculator.ts` | (same as C20) | Pending |
-| C23 | computeBlockIO | 6.4 | S3 | `packages/backend/src/stats-calculator.ts` | (same as C20) | Pending |
-| C24 | computeContainerStats | 6.5 | S3 | `packages/backend/src/stats-calculator.ts` | (same as C20) | Pending |
+| C19 | Mock stats fixtures | 15.2 | S3 | `packages/backend/src/__tests__/fixtures.ts` | N/A (test infra) | ✅ Done |
+| C20 | computeCpuPercent | 6.1 | S3 | `packages/backend/src/stats-calculator.ts` | `packages/backend/src/__tests__/stats-calculator.test.ts` | ✅ Done |
+| C21 | computeMemoryUsage | 6.2 | S3 | `packages/backend/src/stats-calculator.ts` | (same as C20) | ✅ Done |
+| C22 | computeNetworkIO | 6.3 | S3 | `packages/backend/src/stats-calculator.ts` | (same as C20) | ✅ Done |
+| C23 | computeBlockIO | 6.4 | S3 | `packages/backend/src/stats-calculator.ts` | (same as C20) | ✅ Done |
+| C24 | computeContainerStats | 6.5 | S3 | `packages/backend/src/stats-calculator.ts` | (same as C20) | ✅ Done |
 | C25 | ContainerEnginePort interface | 7.1, 20.1 | S4 | `packages/backend/src/adapters/container-engine-adapter.ts` | N/A (interface) | Pending |
 | C26 | PodmanDesktopContainerEngine | 7.1 | S4 | `packages/backend/src/adapters/container-engine-adapter.ts` | `packages/backend/src/__tests__/container-engine-adapter.test.ts` | Pending |
 | C27 | OsPort interface | 7.2, 20.2 | S4 | `packages/backend/src/adapters/os-adapter.ts` | N/A (interface) | Pending |
@@ -1064,9 +1064,9 @@ Implement all functions as specified in ARCHITECTURE-1_0_0.md Section 6:
 
 ### Sprint 3 Acceptance Criteria
 
-- [ ] `npx vitest run packages/backend/src/__tests__/stats-calculator.test.ts` — all ~20 tests pass
-- [ ] Coverage > 95% for `packages/backend/src/stats-calculator.ts`
-- [ ] All existing tests still pass (regression)
+- [x] `npx vitest run packages/backend/src/__tests__/stats-calculator.test.ts` — all ~20 tests pass
+- [x] Coverage > 95% for `packages/backend/src/stats-calculator.ts`
+- [x] All existing tests still pass (regression)
 
 ---
 
@@ -2524,12 +2524,12 @@ C32 (ConfigManager)
 
 ### Sprint 3 Execution Order
 
-1. [ ] Write fixtures: `packages/backend/src/__tests__/fixtures.ts`
-2. [ ] Write calculator tests: `packages/backend/src/__tests__/stats-calculator.test.ts` (RED)
-3. [ ] Implement calculator: `packages/backend/src/stats-calculator.ts` (GREEN)
-4. [ ] Run: `npx vitest run packages/backend/src/__tests__/stats-calculator.test.ts`
-5. [ ] Verify coverage > 95% for stats-calculator.ts
-6. [ ] Run full suite: `npx vitest run` (regression)
+1. [x] Write fixtures: `packages/backend/src/__tests__/fixtures.ts`
+2. [x] Write calculator tests: `packages/backend/src/__tests__/stats-calculator.test.ts` (RED)
+3. [x] Implement calculator: `packages/backend/src/stats-calculator.ts` (GREEN)
+4. [x] Run: `npx vitest run packages/backend/src/__tests__/stats-calculator.test.ts`
+5. [x] Verify coverage > 95% for stats-calculator.ts
+6. [x] Run full suite: `npx vitest run` (regression)
 
 ### Sprint 4 Execution Order
 
