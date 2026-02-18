@@ -9,6 +9,12 @@ export default defineConfig({
   },
   test: {
     globals: true,
+    exclude: [
+      '**/node_modules/**',
+      '**/dist/**',
+      '**/media/**',
+      'packages/frontend/**',
+    ],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'html', 'lcov'],

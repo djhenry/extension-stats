@@ -1,5 +1,5 @@
 // packages/frontend/src/__tests__/stats-store.test.ts
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import { statsSnapshot, initStatsListener } from '../stores/stats-store';
 import { get } from 'svelte/store';
 

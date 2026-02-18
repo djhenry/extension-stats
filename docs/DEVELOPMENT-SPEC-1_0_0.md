@@ -2333,15 +2333,15 @@ jobs:
 
 ### Sprint 10 Acceptance Criteria
 
-- [ ] `npm run build` succeeds across all workspaces
-- [ ] `npm run test` — all tests pass
-- [ ] `npm run test -- --coverage` shows > 80% global coverage
-- [ ] `npm run lint` passes
-- [ ] `README.md` exists with install/build/test instructions
-- [ ] `CLAUDE.md` exists with project context
-- [ ] `CHANGELOG.md` exists with v1.0.0 entry
-- [ ] `.github/workflows/ci.yml` exists
-- [ ] All existing tests still pass (regression)
+- [x] `npm run build` succeeds across all workspaces
+- [x] `npm run test` — all tests pass
+- [x] `npm run test -- --coverage` shows > 80% global coverage
+- [x] `npm run lint` passes
+- [x] `README.md` exists with install/build/test instructions
+- [x] `CLAUDE.md` exists with project context
+- [x] `CHANGELOG.md` exists with v1.0.0 entry
+- [x] `.github/workflows/ci.yml` exists
+- [x] All existing tests still pass (regression)
 
 ---
 
@@ -2570,34 +2570,34 @@ C32 (ConfigManager)
 
 ### Sprint 8 Execution Order
 
-1. [ ] Write store tests: `stats-store.test.ts` (RED)
-2. [ ] Write component tests: `StatsBar.test.ts`, `HostOverview.test.ts`, `ContainerTable.test.ts` (RED)
-3. [ ] Implement store: `stores/stats-store.ts` (GREEN)
-4. [ ] Implement components: `StatsBar.svelte`, `HostOverview.svelte`, `ContainerTable.svelte`, `ContainerRow.svelte`, `SettingsBar.svelte` (GREEN)
-5. [ ] Implement layout: `Dashboard.svelte`, `App.svelte`
-6. [ ] Write `index.html`
-7. [ ] Run: `npx vitest run packages/frontend`
-8. [ ] Run full suite: `npx vitest run` (regression)
+1. [x] Write store tests: `stats-store.test.ts` (RED)
+2. [x] Write component tests: `StatsBar.test.ts`, `HostOverview.test.ts`, `ContainerTable.test.ts` (RED)
+3. [x] Implement store: `stores/stats-store.ts` (GREEN)
+4. [x] Implement components: `StatsBar.svelte`, `HostOverview.svelte`, `ContainerTable.svelte`, `ContainerRow.svelte`, `SettingsBar.svelte` (GREEN)
+5. [x] Implement layout: `Dashboard.svelte`, `App.svelte`
+6. [x] Write `index.html`
+7. [x] Run: `npx vitest run packages/frontend`
+8. [x] Run full suite: `npx vitest run` (regression)
 
 ### Sprint 9 Execution Order
 
-1. [ ] Write integration tests: `integration.test.ts`
-2. [ ] Run: `npx vitest run packages/backend/src/__tests__/integration.test.ts`
-3. [ ] Run full suite: `npx vitest run` (regression)
-4. [ ] Verify full coverage report: `npx vitest run --coverage`
+1. [x] Write integration tests: `integration.test.ts`
+2. [x] Run: `npx vitest run packages/backend/src/__tests__/integration.test.ts`
+3. [x] Run full suite: `npx vitest run` (regression)
+4. [x] Verify full coverage report: `npx vitest run --coverage`
 
 ### Sprint 10 Execution Order
 
-1. [ ] Run `npm run build` across all workspaces
-2. [ ] Fix any build issues
-3. [ ] Write `README.md`
-4. [ ] Write `CLAUDE.md`
-5. [ ] Write `CHANGELOG.md`
-6. [ ] Write `.github/workflows/ci.yml`
-7. [ ] Run `npm run lint`
-8. [ ] Run `npm audit`
-9. [ ] Final full test run: `npm run test -- --coverage`
-10. [ ] Verify global coverage > 80%
+1. [x] Run `npm run build` across all workspaces
+2. [x] Fix any build issues
+3. [x] Write `README.md`
+4. [x] Write `CLAUDE.md`
+5. [x] Write `CHANGELOG.md`
+6. [x] Write `.github/workflows/ci.yml`
+7. [x] Run `npm run lint`
+8. [x] Run `npm audit`
+9. [x] Final full test run: `npm run test -- --coverage`
+10. [x] Verify global coverage > 80%
 
 ---
 
