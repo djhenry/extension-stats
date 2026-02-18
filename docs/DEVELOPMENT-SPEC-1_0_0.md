@@ -93,15 +93,15 @@ graph LR
 | C07 | .eslintrc.json + .prettierrc | 14 | S1 | `.eslintrc.json`, `.prettierrc` | N/A (config) | ✅ Done |
 | C08 | .gitignore | 14 | S1 | `.gitignore` | N/A (config) | ✅ Done |
 | C09 | PD API mock | 15.2 | S1 | `__mocks__/@podman-desktop/api.ts` | N/A (test infra) | ✅ Done |
-| C10 | ProcessedContainerStats | 5.1 | S2 | `packages/shared/src/types.ts` | `packages/shared/src/__tests__/types.test.ts` | Pending |
-| C11 | HostStats | 5.2 | S2 | `packages/shared/src/types.ts` | (same as C10) | Pending |
-| C12 | StatsSnapshot | 5.3 | S2 | `packages/shared/src/types.ts` | (same as C10) | Pending |
-| C13 | RpcMessage / RpcCommand | 5.4 | S2 | `packages/shared/src/rpc-types.ts` | (same as C10) | Pending |
-| C14 | CpuTimes | 5.5 | S2 | `packages/shared/src/types.ts` | (same as C10) | Pending |
-| C15 | formatBytes | 6.6 | S2 | `packages/shared/src/format.ts` | `packages/shared/src/__tests__/format.test.ts` | Pending |
-| C16 | formatPercent | 6.6 | S2 | `packages/shared/src/format.ts` | (same as C15) | Pending |
-| C17 | formatUptime | 6.6 | S2 | `packages/shared/src/format.ts` | (same as C15) | Pending |
-| C18 | Shared index.ts | 14 | S2 | `packages/shared/src/index.ts` | N/A | Pending |
+| C10 | ProcessedContainerStats | 5.1 | S2 | `packages/shared/src/types.ts` | `packages/shared/src/__tests__/types.test.ts` | ✅ Done |
+| C11 | HostStats | 5.2 | S2 | `packages/shared/src/types.ts` | (same as C10) | ✅ Done |
+| C12 | StatsSnapshot | 5.3 | S2 | `packages/shared/src/types.ts` | (same as C10) | ✅ Done |
+| C13 | RpcMessage / RpcCommand | 5.4 | S2 | `packages/shared/src/rpc-types.ts` | (same as C10) | ✅ Done |
+| C14 | CpuTimes | 5.5 | S2 | `packages/shared/src/types.ts` | (same as C10) | ✅ Done |
+| C15 | formatBytes | 6.6 | S2 | `packages/shared/src/format.ts` | `packages/shared/src/__tests__/format.test.ts` | ✅ Done |
+| C16 | formatPercent | 6.6 | S2 | `packages/shared/src/format.ts` | (same as C15) | ✅ Done |
+| C17 | formatUptime | 6.6 | S2 | `packages/shared/src/format.ts` | (same as C15) | ✅ Done |
+| C18 | Shared index.ts | 14 | S2 | `packages/shared/src/index.ts` | N/A | ✅ Done |
 | C19 | Mock stats fixtures | 15.2 | S3 | `packages/backend/src/__tests__/fixtures.ts` | N/A (test infra) | Pending |
 | C20 | computeCpuPercent | 6.1 | S3 | `packages/backend/src/stats-calculator.ts` | `packages/backend/src/__tests__/stats-calculator.test.ts` | Pending |
 | C21 | computeMemoryUsage | 6.2 | S3 | `packages/backend/src/stats-calculator.ts` | (same as C20) | Pending |
@@ -619,11 +619,11 @@ Re-export all types and format functions.
 
 ### Sprint 2 Acceptance Criteria
 
-- [ ] `npx vitest run packages/shared` — all 15+ tests pass
-- [ ] Type definitions compile without errors
-- [ ] `packages/shared/src/index.ts` exports all public types and functions
-- [ ] Coverage > 95% for `packages/shared/src/format.ts`
-- [ ] All existing tests still pass (regression)
+- [x] `npx vitest run packages/shared` — all 15+ tests pass
+- [x] Type definitions compile without errors
+- [x] `packages/shared/src/index.ts` exports all public types and functions
+- [x] Coverage > 95% for `packages/shared/src/format.ts`
+- [x] All existing tests still pass (regression)
 
 ---
 
@@ -2513,14 +2513,14 @@ C32 (ConfigManager)
 
 ### Sprint 2 Execution Order
 
-1. [ ] Write type tests: `packages/shared/src/__tests__/types.test.ts` (RED)
-2. [ ] Write format tests: `packages/shared/src/__tests__/format.test.ts` (RED)
-3. [ ] Implement types: `packages/shared/src/types.ts` (GREEN)
-4. [ ] Implement RPC types: `packages/shared/src/rpc-types.ts` (GREEN)
-5. [ ] Implement formatters: `packages/shared/src/format.ts` (GREEN)
-6. [ ] Write index: `packages/shared/src/index.ts`
-7. [ ] Run: `npx vitest run packages/shared`
-8. [ ] Verify coverage > 95% for format.ts
+1. [x] Write type tests: `packages/shared/src/__tests__/types.test.ts` (RED)
+2. [x] Write format tests: `packages/shared/src/__tests__/format.test.ts` (RED)
+3. [x] Implement types: `packages/shared/src/types.ts` (GREEN)
+4. [x] Implement RPC types: `packages/shared/src/rpc-types.ts` (GREEN)
+5. [x] Implement formatters: `packages/shared/src/format.ts` (GREEN)
+6. [x] Write index: `packages/shared/src/index.ts`
+7. [x] Run: `npx vitest run packages/shared`
+8. [x] Verify coverage > 95% for format.ts
 
 ### Sprint 3 Execution Order
 
