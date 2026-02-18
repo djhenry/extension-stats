@@ -1,0 +1,43 @@
+{
+  "name": "podman-desktop-stats",
+  "displayName": "Container Stats",
+  "description": "Real-time container and host resource monitoring dashboard",
+  "version": "1.0.0",
+  "publisher": "dhenry",
+  "license": "Apache-2.0",
+  "type": "module",
+  "icon": "icon.png",
+  "engines": {
+    "podman-desktop": "^1.17.0"
+  },
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Container Stats",
+      "properties": {
+        "containerStats.refreshInterval": {
+          "type": "number",
+          "default": 3,
+          "minimum": 1,
+          "maximum": 30,
+          "description": "Stats refresh interval in seconds"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "watch": "vite build --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@podman-desktop-stats/shared": "*"
+  },
+  "devDependencies": {
+    "@podman-desktop/api": "latest",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.7.0",
+    "vite": "^6.0.0",
+    "vitest": "^3.0.0"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "@podman-desktop-stats/frontend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "watch": "vite build --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@podman-desktop-stats/shared": "*",
+    "@podman-desktop/ui-svelte": "^1.22.0",
+    "svelte": "^5.0.0"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^5.0.0",
+    "@testing-library/svelte": "^5.0.0",
+    "@types/node": "^20.0.0",
+    "autoprefixer": "^10.0.0",
+    "postcss": "^8.0.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.7.0",
+    "vite": "^6.0.0",
+    "vitest": "^3.0.0"
+  }
+}

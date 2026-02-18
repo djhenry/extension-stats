@@ -84,15 +84,15 @@ graph LR
 
 | # | Component | ARCH Section | Sprint | Files | Tests | Status |
 |---|-----------|-------------|--------|-------|-------|--------|
-| C01 | Root package.json (workspaces) | 14 | S1 | `package.json` | N/A (config) | Pending |
-| C02 | tsconfig.base.json | 14 | S1 | `tsconfig.base.json` | N/A (config) | Pending |
-| C03 | Shared package.json + tsconfig | 14 | S1 | `packages/shared/package.json`, `packages/shared/tsconfig.json` | N/A (config) | Pending |
-| C04 | Backend package.json + tsconfig + vite.config | 11, 12, 14 | S1 | `packages/backend/package.json`, `packages/backend/tsconfig.json`, `packages/backend/vite.config.ts` | N/A (config) | Pending |
-| C05 | Frontend package.json + configs | 14 | S1 | `packages/frontend/package.json`, `packages/frontend/tsconfig.json`, `packages/frontend/vite.config.ts`, `packages/frontend/svelte.config.js`, `packages/frontend/tailwind.config.js` | N/A (config) | Pending |
-| C06 | vitest.config.ts | 15 | S1 | `vitest.config.ts` | N/A (config) | Pending |
-| C07 | .eslintrc.json + .prettierrc | 14 | S1 | `.eslintrc.json`, `.prettierrc` | N/A (config) | Pending |
-| C08 | .gitignore | 14 | S1 | `.gitignore` | N/A (config) | Pending |
-| C09 | PD API mock | 15.2 | S1 | `__mocks__/@podman-desktop/api.ts` | N/A (test infra) | Pending |
+| C01 | Root package.json (workspaces) | 14 | S1 | `package.json` | N/A (config) | ✅ Done |
+| C02 | tsconfig.base.json | 14 | S1 | `tsconfig.base.json` | N/A (config) | ✅ Done |
+| C03 | Shared package.json + tsconfig | 14 | S1 | `packages/shared/package.json`, `packages/shared/tsconfig.json` | N/A (config) | ✅ Done |
+| C04 | Backend package.json + tsconfig + vite.config | 11, 12, 14 | S1 | `packages/backend/package.json`, `packages/backend/tsconfig.json`, `packages/backend/vite.config.ts` | N/A (config) | ✅ Done |
+| C05 | Frontend package.json + configs | 14 | S1 | `packages/frontend/package.json`, `packages/frontend/tsconfig.json`, `packages/frontend/vite.config.ts`, `packages/frontend/svelte.config.js`, `packages/frontend/tailwind.config.js` | N/A (config) | ✅ Done |
+| C06 | vitest.config.ts | 15 | S1 | `vitest.config.ts` | N/A (config) | ✅ Done |
+| C07 | .eslintrc.json + .prettierrc | 14 | S1 | `.eslintrc.json`, `.prettierrc` | N/A (config) | ✅ Done |
+| C08 | .gitignore | 14 | S1 | `.gitignore` | N/A (config) | ✅ Done |
+| C09 | PD API mock | 15.2 | S1 | `__mocks__/@podman-desktop/api.ts` | N/A (test infra) | ✅ Done |
 | C10 | ProcessedContainerStats | 5.1 | S2 | `packages/shared/src/types.ts` | `packages/shared/src/__tests__/types.test.ts` | Pending |
 | C11 | HostStats | 5.2 | S2 | `packages/shared/src/types.ts` | (same as C10) | Pending |
 | C12 | StatsSnapshot | 5.3 | S2 | `packages/shared/src/types.ts` | (same as C10) | Pending |
@@ -347,12 +347,12 @@ export type ExtensionContext = {
 
 ### Sprint 1 Acceptance Criteria
 
-- [ ] `npm install` completes without errors
-- [ ] Directory structure matches ARCHITECTURE-1_0_0.md Section 14
-- [ ] `npx tsc --noEmit -p packages/shared/tsconfig.json` succeeds
-- [ ] `npx tsc --noEmit -p packages/backend/tsconfig.json` succeeds (after stubs)
-- [ ] `__mocks__/@podman-desktop/api.ts` exists and exports required mocks
-- [ ] `.gitignore` excludes `node_modules/`, `dist/`, `packages/backend/media/`
+- [x] `npm install` completes without errors
+- [x] Directory structure matches ARCHITECTURE-1_0_0.md Section 14
+- [x] `npx tsc --noEmit -p packages/shared/tsconfig.json` succeeds
+- [x] `npx tsc --noEmit -p packages/backend/tsconfig.json` succeeds (after stubs)
+- [x] `__mocks__/@podman-desktop/api.ts` exists and exports required mocks
+- [x] `.gitignore` excludes `node_modules/`, `dist/`, `packages/backend/media/`
 
 ---
 
@@ -2351,8 +2351,8 @@ jobs:
 
 | Version | Components | Completed | Pending |
 |---------|-----------|-----------|---------|
-| v1.0.0 | 50 (C01-C50) | 0 | 50 |
-| **Total** | **50** | **0** | **50** |
+| v1.0.0 | 50 (C01-C50) | 9 | 41 |
+| **Total** | **50** | **9** | **41** |
 
 ---
 
@@ -2498,18 +2498,18 @@ C32 (ConfigManager)
 
 ### Sprint 1 Execution Order
 
-1. [ ] Create directory structure: `packages/{shared,backend,frontend}/src/`
-2. [ ] Write root `package.json` with workspaces
-3. [ ] Write `tsconfig.base.json`
-4. [ ] Write `packages/shared/package.json` + `tsconfig.json` + stub `src/index.ts`
-5. [ ] Write `packages/backend/package.json` + `tsconfig.json` + `vite.config.ts`
-6. [ ] Write `packages/frontend/package.json` + `tsconfig.json` + `vite.config.ts` + `svelte.config.js` + `tailwind.config.js`
-7. [ ] Write `vitest.config.ts`
-8. [ ] Write `.eslintrc.json` + `.prettierrc`
-9. [ ] Write `.gitignore`
-10. [ ] Write `__mocks__/@podman-desktop/api.ts`
-11. [ ] Run `npm install`
-12. [ ] Verify: `npx tsc --noEmit -p packages/shared/tsconfig.json`
+1. [x] Create directory structure: `packages/{shared,backend,frontend}/src/`
+2. [x] Write root `package.json` with workspaces
+3. [x] Write `tsconfig.base.json`
+4. [x] Write `packages/shared/package.json` + `tsconfig.json` + stub `src/index.ts`
+5. [x] Write `packages/backend/package.json` + `tsconfig.json` + `vite.config.ts`
+6. [x] Write `packages/frontend/package.json` + `tsconfig.json` + `vite.config.ts` + `svelte.config.js` + `tailwind.config.js`
+7. [x] Write `vitest.config.ts`
+8. [x] Write `.eslintrc.json` + `.prettierrc`
+9. [x] Write `.gitignore`
+10. [x] Write `__mocks__/@podman-desktop/api.ts`
+11. [x] Run `npm install`
+12. [x] Verify: `npx tsc --noEmit -p packages/shared/tsconfig.json`
 
 ### Sprint 2 Execution Order
 
