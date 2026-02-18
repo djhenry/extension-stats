@@ -116,9 +116,9 @@ graph LR
 | C30 | HostStatsCollector | 4.4 | S5 | `packages/backend/src/host-stats-collector.ts` | `packages/backend/src/__tests__/host-stats-collector.test.ts` | ✅ Done |
 | C31 | ContainerStatsCollector | 4.3 | S5 | `packages/backend/src/container-stats-collector.ts` | `packages/backend/src/__tests__/container-stats-collector.test.ts` | ✅ Done |
 | C32 | ConfigManager | 4.5 | S5 | `packages/backend/src/config-manager.ts` | `packages/backend/src/__tests__/config-manager.test.ts` | ✅ Done |
-| C33 | StatsListener interface | 4.2, 20.3 | S6 | `packages/backend/src/stats-manager.ts` | N/A (interface) | Pending |
-| C34 | StatsManager | 4.2 | S6 | `packages/backend/src/stats-manager.ts` | `packages/backend/src/__tests__/stats-manager.test.ts` | Pending |
-| C35 | RpcBridge | 4.6 | S6 | `packages/backend/src/rpc-bridge.ts` | `packages/backend/src/__tests__/rpc-bridge.test.ts` | Pending |
+| C33 | StatsListener interface | 4.2, 20.3 | S6 | `packages/backend/src/stats-manager.ts` | N/A (interface) | ✅ Done |
+| C34 | StatsManager | 4.2 | S6 | `packages/backend/src/stats-manager.ts` | `packages/backend/src/__tests__/stats-manager.test.ts` | ✅ Done |
+| C35 | RpcBridge | 4.6 | S6 | `packages/backend/src/rpc-bridge.ts` | `packages/backend/src/__tests__/rpc-bridge.test.ts` | ✅ Done |
 | C36 | extension.ts (activate/deactivate) | 4.1 | S7 | `packages/backend/src/extension.ts` | `packages/backend/src/__tests__/extension.test.ts` | Pending |
 | C37 | stats-store.ts (Svelte store) | 8.3 | S8 | `packages/frontend/src/stores/stats-store.ts` | `packages/frontend/src/__tests__/stats-store.test.ts` | Pending |
 | C38 | App.svelte | 14 | S8 | `packages/frontend/src/App.svelte` | N/A (root mount) | Pending |
@@ -1804,10 +1804,10 @@ Implement as specified in ARCHITECTURE-1_0_0.md Sections 4.2 and 4.6.
 
 ### Sprint 6 Acceptance Criteria
 
-- [ ] `npx vitest run packages/backend/src/__tests__/stats-manager.test.ts` — all pass
-- [ ] `npx vitest run packages/backend/src/__tests__/rpc-bridge.test.ts` — all pass
-- [ ] Coverage > 80% for `stats-manager.ts` and `rpc-bridge.ts`
-- [ ] All existing tests still pass (regression)
+- [x] `npx vitest run packages/backend/src/__tests__/stats-manager.test.ts` — all pass
+- [x] `npx vitest run packages/backend/src/__tests__/rpc-bridge.test.ts` — all pass
+- [x] Coverage > 80% for `stats-manager.ts` and `rpc-bridge.ts`
+- [x] All existing tests still pass (regression)
 
 ---
 
@@ -2553,12 +2553,12 @@ C32 (ConfigManager)
 
 ### Sprint 6 Execution Order
 
-1. [ ] Write stats manager tests: `stats-manager.test.ts` (RED)
-2. [ ] Write RPC bridge tests: `rpc-bridge.test.ts` (RED)
-3. [ ] Implement stats manager: `stats-manager.ts` (GREEN)
-4. [ ] Implement RPC bridge: `rpc-bridge.ts` (GREEN)
-5. [ ] Run: `npx vitest run packages/backend/src/__tests__/{stats-manager,rpc-bridge}.test.ts`
-6. [ ] Run full suite: `npx vitest run` (regression)
+1. [x] Write stats manager tests: `stats-manager.test.ts` (RED)
+2. [x] Write RPC bridge tests: `rpc-bridge.test.ts` (RED)
+3. [x] Implement stats manager: `stats-manager.ts` (GREEN)
+4. [x] Implement RPC bridge: `rpc-bridge.ts` (GREEN)
+5. [x] Run: `npx vitest run packages/backend/src/__tests__/{stats-manager,rpc-bridge}.test.ts`
+6. [x] Run full suite: `npx vitest run` (regression)
 
 ### Sprint 7 Execution Order
 
