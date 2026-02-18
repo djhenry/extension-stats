@@ -1,6 +1,12 @@
 import { defineConfig } from 'vitest/config';
+import { resolve } from 'node:path';
 
 export default defineConfig({
+  resolve: {
+    alias: {
+      '@podman-desktop/api': resolve(__dirname, '__mocks__/@podman-desktop/api.ts'),
+    },
+  },
   test: {
     globals: true,
     coverage: {

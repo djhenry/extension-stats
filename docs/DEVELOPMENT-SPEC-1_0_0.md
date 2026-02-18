@@ -108,11 +108,11 @@ graph LR
 | C22 | computeNetworkIO | 6.3 | S3 | `packages/backend/src/stats-calculator.ts` | (same as C20) | ✅ Done |
 | C23 | computeBlockIO | 6.4 | S3 | `packages/backend/src/stats-calculator.ts` | (same as C20) | ✅ Done |
 | C24 | computeContainerStats | 6.5 | S3 | `packages/backend/src/stats-calculator.ts` | (same as C20) | ✅ Done |
-| C25 | ContainerEnginePort interface | 7.1, 20.1 | S4 | `packages/backend/src/adapters/container-engine-adapter.ts` | N/A (interface) | Pending |
-| C26 | PodmanDesktopContainerEngine | 7.1 | S4 | `packages/backend/src/adapters/container-engine-adapter.ts` | `packages/backend/src/__tests__/container-engine-adapter.test.ts` | Pending |
-| C27 | OsPort interface | 7.2, 20.2 | S4 | `packages/backend/src/adapters/os-adapter.ts` | N/A (interface) | Pending |
-| C28 | NodeOsAdapter | 7.2 | S4 | `packages/backend/src/adapters/os-adapter.ts` | `packages/backend/src/__tests__/os-adapter.test.ts` | Pending |
-| C29 | Logger | 9.2 | S4 | `packages/backend/src/logger.ts` | `packages/backend/src/__tests__/logger.test.ts` | Pending |
+| C25 | ContainerEnginePort interface | 7.1, 20.1 | S4 | `packages/backend/src/adapters/container-engine-adapter.ts` | N/A (interface) | ✅ Done |
+| C26 | PodmanDesktopContainerEngine | 7.1 | S4 | `packages/backend/src/adapters/container-engine-adapter.ts` | `packages/backend/src/__tests__/container-engine-adapter.test.ts` | ✅ Done |
+| C27 | OsPort interface | 7.2, 20.2 | S4 | `packages/backend/src/adapters/os-adapter.ts` | N/A (interface) | ✅ Done |
+| C28 | NodeOsAdapter | 7.2 | S4 | `packages/backend/src/adapters/os-adapter.ts` | `packages/backend/src/__tests__/os-adapter.test.ts` | ✅ Done |
+| C29 | Logger | 9.2 | S4 | `packages/backend/src/logger.ts` | `packages/backend/src/__tests__/logger.test.ts` | ✅ Done |
 | C30 | HostStatsCollector | 4.4 | S5 | `packages/backend/src/host-stats-collector.ts` | `packages/backend/src/__tests__/host-stats-collector.test.ts` | Pending |
 | C31 | ContainerStatsCollector | 4.3 | S5 | `packages/backend/src/container-stats-collector.ts` | `packages/backend/src/__tests__/container-stats-collector.test.ts` | Pending |
 | C32 | ConfigManager | 4.5 | S5 | `packages/backend/src/config-manager.ts` | `packages/backend/src/__tests__/config-manager.test.ts` | Pending |
@@ -1226,11 +1226,11 @@ Implement as specified in ARCHITECTURE-1_0_0.md Section 7 and 9.2.
 
 ### Sprint 4 Acceptance Criteria
 
-- [ ] `npx vitest run packages/backend/src/__tests__/container-engine-adapter.test.ts` — all pass
-- [ ] `npx vitest run packages/backend/src/__tests__/os-adapter.test.ts` — all pass
-- [ ] `npx vitest run packages/backend/src/__tests__/logger.test.ts` — all pass
-- [ ] Coverage > 80% for adapter files
-- [ ] All existing tests still pass (regression)
+- [x] `npx vitest run packages/backend/src/__tests__/container-engine-adapter.test.ts` — all pass
+- [x] `npx vitest run packages/backend/src/__tests__/os-adapter.test.ts` — all pass
+- [x] `npx vitest run packages/backend/src/__tests__/logger.test.ts` — all pass
+- [x] Coverage > 80% for adapter files
+- [x] All existing tests still pass (regression)
 
 ---
 
@@ -2533,12 +2533,12 @@ C32 (ConfigManager)
 
 ### Sprint 4 Execution Order
 
-1. [ ] Write adapter tests: `container-engine-adapter.test.ts`, `os-adapter.test.ts` (RED)
-2. [ ] Write logger tests: `logger.test.ts` (RED)
-3. [ ] Implement adapters: `container-engine-adapter.ts`, `os-adapter.ts` (GREEN)
-4. [ ] Implement logger: `logger.ts` (GREEN)
-5. [ ] Run: `npx vitest run packages/backend/src/__tests__/{container-engine-adapter,os-adapter,logger}.test.ts`
-6. [ ] Run full suite: `npx vitest run` (regression)
+1. [x] Write adapter tests: `container-engine-adapter.test.ts`, `os-adapter.test.ts` (RED)
+2. [x] Write logger tests: `logger.test.ts` (RED)
+3. [x] Implement adapters: `container-engine-adapter.ts`, `os-adapter.ts` (GREEN)
+4. [x] Implement logger: `logger.ts` (GREEN)
+5. [x] Run: `npx vitest run packages/backend/src/__tests__/{container-engine-adapter,os-adapter,logger}.test.ts`
+6. [x] Run full suite: `npx vitest run` (regression)
 
 ### Sprint 5 Execution Order
 
