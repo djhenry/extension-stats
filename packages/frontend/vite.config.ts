@@ -3,7 +3,7 @@ import { svelte } from '@sveltejs/vite-plugin-svelte';
 import { resolve } from 'path';
 
 export default defineConfig({
-  plugins: [svelte()],
+  plugins: [svelte({ hot: !process.env.VITEST })],
   build: {
     outDir: '../backend/media',
     emptyOutDir: true,
@@ -11,8 +11,12 @@ export default defineConfig({
       input: resolve(__dirname, 'index.html'),
     },
   },
+  resolve: {
+    conditions: ['browser'],
+  },
   test: {
     globals: true,
     environment: 'jsdom',
+    setupFiles: [resolve(__dirname, 'vitest-setup.ts')],
   },
 });

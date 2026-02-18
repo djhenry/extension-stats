@@ -2089,10 +2089,10 @@ Implement Svelte components and store as specified in ARCHITECTURE-1_0_0.md Sect
 
 ### Sprint 8 Acceptance Criteria
 
-- [ ] `npx vitest run packages/frontend` — all tests pass
-- [ ] `npm run build --workspace=packages/frontend` succeeds
-- [ ] Coverage > 80% for `stores/stats-store.ts`
-- [ ] All existing tests still pass (regression)
+- [x] `npx vitest run packages/frontend` — all tests pass
+- [x] `npm run build --workspace=packages/frontend` succeeds
+- [x] Coverage > 80% for `stores/stats-store.ts`
+- [x] All existing tests still pass (regression)
 
 ---
 

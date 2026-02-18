@@ -5,7 +5,9 @@
   "scripts": {
     "build": "vite build",
     "watch": "vite build --watch",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "@podman-desktop-stats/shared": "*",
@@ -17,6 +19,7 @@
     "@testing-library/svelte": "^5.0.0",
     "@types/node": "^20.0.0",
     "autoprefixer": "^10.0.0",
+    "jsdom": "^26.0.0",
     "postcss": "^8.0.0",
     "tailwindcss": "^4.0.0",
     "typescript": "^5.7.0",
