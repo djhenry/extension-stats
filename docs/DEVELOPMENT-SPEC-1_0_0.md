@@ -2252,10 +2252,10 @@ describe('Integration: Full backend pipeline', () => {
 
 ### Sprint 9 Acceptance Criteria
 
-- [ ] `npx vitest run packages/backend/src/__tests__/integration.test.ts` — all pass
-- [ ] Full backend pipeline verified: engine → collector → manager → RPC → message
-- [ ] Graceful container removal verified
-- [ ] All existing tests still pass (regression)
+- [x] `npx vitest run packages/backend/src/__tests__/integration.test.ts` — all pass
+- [x] Full backend pipeline verified: engine → collector → manager → RPC → message
+- [x] Graceful container removal verified
+- [x] All existing tests still pass (regression)
 
 ---
 
