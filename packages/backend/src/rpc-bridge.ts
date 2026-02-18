@@ -12,8 +12,8 @@ export class RpcBridge implements StatsListener {
   ) {
     this.statsManager.setListener(this);
 
-    this.disposable = webview.onDidReceiveMessage((message: RpcCommand) => {
-      this.handleCommand(message);
+    this.disposable = webview.onDidReceiveMessage((message: unknown) => {
+      this.handleCommand(message as RpcCommand);
     });
   }
 

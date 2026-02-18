@@ -119,7 +119,7 @@ graph LR
 | C33 | StatsListener interface | 4.2, 20.3 | S6 | `packages/backend/src/stats-manager.ts` | N/A (interface) | ✅ Done |
 | C34 | StatsManager | 4.2 | S6 | `packages/backend/src/stats-manager.ts` | `packages/backend/src/__tests__/stats-manager.test.ts` | ✅ Done |
 | C35 | RpcBridge | 4.6 | S6 | `packages/backend/src/rpc-bridge.ts` | `packages/backend/src/__tests__/rpc-bridge.test.ts` | ✅ Done |
-| C36 | extension.ts (activate/deactivate) | 4.1 | S7 | `packages/backend/src/extension.ts` | `packages/backend/src/__tests__/extension.test.ts` | Pending |
+| C36 | extension.ts (activate/deactivate) | 4.1 | S7 | `packages/backend/src/extension.ts` | `packages/backend/src/__tests__/extension.test.ts` | ✅ Done |
 | C37 | stats-store.ts (Svelte store) | 8.3 | S8 | `packages/frontend/src/stores/stats-store.ts` | `packages/frontend/src/__tests__/stats-store.test.ts` | Pending |
 | C38 | App.svelte | 14 | S8 | `packages/frontend/src/App.svelte` | N/A (root mount) | Pending |
 | C39 | Dashboard.svelte | 19.3 | S8 | `packages/frontend/src/Dashboard.svelte` | `packages/frontend/src/__tests__/Dashboard.test.ts` | Pending |
@@ -1892,9 +1892,9 @@ Implement as specified in ARCHITECTURE-1_0_0.md Section 4.1.
 
 ### Sprint 7 Acceptance Criteria
 
-- [ ] `npx vitest run packages/backend/src/__tests__/extension.test.ts` — all pass
-- [ ] `npm run build --workspace=packages/backend` succeeds (or `npx tsc --noEmit`)
-- [ ] All existing tests still pass (regression)
+- [x] `npx vitest run packages/backend/src/__tests__/extension.test.ts` — all pass
+- [x] `npm run build --workspace=packages/backend` succeeds (or `npx tsc --noEmit`)
+- [x] All existing tests still pass (regression)
 
 ---
 
@@ -2562,11 +2562,11 @@ C32 (ConfigManager)
 
 ### Sprint 7 Execution Order
 
-1. [ ] Write extension tests: `extension.test.ts` (RED)
-2. [ ] Implement extension: `extension.ts` (GREEN)
-3. [ ] Run: `npx vitest run packages/backend/src/__tests__/extension.test.ts`
-4. [ ] Verify: `npx tsc --noEmit -p packages/backend/tsconfig.json`
-5. [ ] Run full suite: `npx vitest run` (regression)
+1. [x] Write extension tests: `extension.test.ts` (RED)
+2. [x] Implement extension: `extension.ts` (GREEN)
+3. [x] Run: `npx vitest run packages/backend/src/__tests__/extension.test.ts`
+4. [x] Verify: `npx tsc --noEmit -p packages/backend/tsconfig.json`
+5. [x] Run full suite: `npx vitest run` (regression)
 
 ### Sprint 8 Execution Order
 

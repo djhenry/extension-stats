@@ -21,10 +21,8 @@ export class ConfigManager {
   }
 
   onDidChangeConfiguration(callback: () => void): podmanDesktopAPI.Disposable {
-    return podmanDesktopAPI.configuration.onDidChangeConfiguration(e => {
-      if (e.key.startsWith(`${CONFIG_SECTION}.`)) {
-        callback();
-      }
+    return podmanDesktopAPI.configuration.onDidChangeConfiguration(() => {
+      callback();
     });
   }
 }

@@ -32,6 +32,8 @@ export interface MockStatsInfo {
   read?: string;
   preread?: string;
   num_procs?: number;
+  engineId: string;
+  engineName: string;
 }
 
 export function createMockStatsInfo(
@@ -62,6 +64,8 @@ export function createMockStatsInfo(
       ],
     },
     pids_stats: { current: 12 },
+    engineId: 'test-engine',
+    engineName: 'Test Engine',
     ...overrides,
   };
 }
