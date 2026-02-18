@@ -113,9 +113,9 @@ graph LR
 | C27 | OsPort interface | 7.2, 20.2 | S4 | `packages/backend/src/adapters/os-adapter.ts` | N/A (interface) | ✅ Done |
 | C28 | NodeOsAdapter | 7.2 | S4 | `packages/backend/src/adapters/os-adapter.ts` | `packages/backend/src/__tests__/os-adapter.test.ts` | ✅ Done |
 | C29 | Logger | 9.2 | S4 | `packages/backend/src/logger.ts` | `packages/backend/src/__tests__/logger.test.ts` | ✅ Done |
-| C30 | HostStatsCollector | 4.4 | S5 | `packages/backend/src/host-stats-collector.ts` | `packages/backend/src/__tests__/host-stats-collector.test.ts` | Pending |
-| C31 | ContainerStatsCollector | 4.3 | S5 | `packages/backend/src/container-stats-collector.ts` | `packages/backend/src/__tests__/container-stats-collector.test.ts` | Pending |
-| C32 | ConfigManager | 4.5 | S5 | `packages/backend/src/config-manager.ts` | `packages/backend/src/__tests__/config-manager.test.ts` | Pending |
+| C30 | HostStatsCollector | 4.4 | S5 | `packages/backend/src/host-stats-collector.ts` | `packages/backend/src/__tests__/host-stats-collector.test.ts` | ✅ Done |
+| C31 | ContainerStatsCollector | 4.3 | S5 | `packages/backend/src/container-stats-collector.ts` | `packages/backend/src/__tests__/container-stats-collector.test.ts` | ✅ Done |
+| C32 | ConfigManager | 4.5 | S5 | `packages/backend/src/config-manager.ts` | `packages/backend/src/__tests__/config-manager.test.ts` | ✅ Done |
 | C33 | StatsListener interface | 4.2, 20.3 | S6 | `packages/backend/src/stats-manager.ts` | N/A (interface) | Pending |
 | C34 | StatsManager | 4.2 | S6 | `packages/backend/src/stats-manager.ts` | `packages/backend/src/__tests__/stats-manager.test.ts` | Pending |
 | C35 | RpcBridge | 4.6 | S6 | `packages/backend/src/rpc-bridge.ts` | `packages/backend/src/__tests__/rpc-bridge.test.ts` | Pending |
@@ -1540,11 +1540,11 @@ Implement as specified in ARCHITECTURE-1_0_0.md Sections 4.3, 4.4, 4.5.
 
 ### Sprint 5 Acceptance Criteria
 
-- [ ] `npx vitest run packages/backend/src/__tests__/host-stats-collector.test.ts` — all pass
-- [ ] `npx vitest run packages/backend/src/__tests__/container-stats-collector.test.ts` — all pass
-- [ ] `npx vitest run packages/backend/src/__tests__/config-manager.test.ts` — all pass
-- [ ] Coverage > 80% for all three files
-- [ ] All existing tests still pass (regression)
+- [x] `npx vitest run packages/backend/src/__tests__/host-stats-collector.test.ts` — all pass
+- [x] `npx vitest run packages/backend/src/__tests__/container-stats-collector.test.ts` — all pass
+- [x] `npx vitest run packages/backend/src/__tests__/config-manager.test.ts` — all pass
+- [x] Coverage > 80% for all three files
+- [x] All existing tests still pass (regression)
 
 ---
 
@@ -2542,14 +2542,14 @@ C32 (ConfigManager)
 
 ### Sprint 5 Execution Order
 
-1. [ ] Write host collector tests: `host-stats-collector.test.ts` (RED)
-2. [ ] Write container collector tests: `container-stats-collector.test.ts` (RED)
-3. [ ] Write config manager tests: `config-manager.test.ts` (RED)
-4. [ ] Implement host collector: `host-stats-collector.ts` (GREEN)
-5. [ ] Implement container collector: `container-stats-collector.ts` (GREEN)
-6. [ ] Implement config manager: `config-manager.ts` (GREEN)
-7. [ ] Run: `npx vitest run packages/backend/src/__tests__/{host-stats,container-stats,config}*.test.ts`
-8. [ ] Run full suite: `npx vitest run` (regression)
+1. [x] Write host collector tests: `host-stats-collector.test.ts` (RED)
+2. [x] Write container collector tests: `container-stats-collector.test.ts` (RED)
+3. [x] Write config manager tests: `config-manager.test.ts` (RED)
+4. [x] Implement host collector: `host-stats-collector.ts` (GREEN)
+5. [x] Implement container collector: `container-stats-collector.ts` (GREEN)
+6. [x] Implement config manager: `config-manager.ts` (GREEN)
+7. [x] Run: `npx vitest run packages/backend/src/__tests__/{host-stats,container-stats,config}*.test.ts`
+8. [x] Run full suite: `npx vitest run` (regression)
 
 ### Sprint 6 Execution Order
 
