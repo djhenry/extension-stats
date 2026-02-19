@@ -12,29 +12,48 @@ A Podman Desktop extension that provides real-time container and host system sta
 
 ## Installation
 
-### From Source
+### Quick Install (Recommended)
 
-1. Clone the repository:
+Use the provided installation script:
+
+```bash
+# Clone and build
+git clone https://github.com/yourusername/podman-desktop-stats-plugin.git
+cd podman-desktop-stats-plugin
+npm install
+
+# Package for Podman Desktop
+./install-extension.sh
+```
+
+Then in **Podman Desktop**:
+1. Go to **Extensions**
+2. Click **Install from file...**
+3. Select: `packages/backend/podman-desktop-stats-1.0.0.tar`
+4. Click **Install**
+
+### Manual Installation
+
+1. Clone and install dependencies:
 ```bash
 git clone https://github.com/yourusername/podman-desktop-stats-plugin.git
 cd podman-desktop-stats-plugin
-```
-
-2. Install dependencies:
-```bash
 npm install
 ```
 
-3. Build the extension:
+2. Build and package:
 ```bash
 npm run build
+cd packages/backend
+podman build -t localhost/podman-desktop-stats:1.0.0 -f Containerfile .
+podman save localhost/podman-desktop-stats:1.0.0 -o podman-desktop-stats-1.0.0.tar
 ```
 
-4. Load in Podman Desktop:
+3. Install in Podman Desktop:
    - Open Podman Desktop
    - Go to **Extensions**
-   - Click **Install custom...**
-   - Select the `packages/backend` directory
+   - Click **Install from file...**
+   - Select the `.tar` file created above
 
 ## Development
 
