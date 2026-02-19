@@ -27,17 +27,18 @@ export async function activate(
 
   // Load and set the webview HTML
   const htmlPath = path.join(extensionContext.extensionPath, 'media', 'index.html');
-  let html = fs.readFileSync(htmlPath, 'utf-8');
+  const html = fs.readFileSync(htmlPath, 'utf-8');
 
   // Convert asset paths to webview URIs
   const mediaPath = podmanDesktopAPI.Uri.file(path.join(extensionContext.extensionPath, 'media'));
   const mediaUri = panel.webview.asWebviewUri(mediaPath);
 
   // Replace absolute paths with webview URIs
-  html = html.replace(/src="\/assets\//g, `src="${mediaUri}/assets/`);
-  html = html.replace(/href="\/assets\//g, `href="${mediaUri}/assets/`);
+  const updatedHtml = html
+    .replace(/src="\/assets\//g, `src="${mediaUri}/assets/`)
+    .replace(/href="\/assets\//g, `href="${mediaUri}/assets/`);
 
-  panel.webview.html = html;
+  panel.webview.html = updatedHtml;
 
   // Create adapters
   const containerEngineAdapter = new PodmanDesktopContainerEngine();
