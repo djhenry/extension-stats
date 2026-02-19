@@ -12,48 +12,46 @@ A Podman Desktop extension that provides real-time container and host system sta
 
 ## Installation
 
-### Quick Install (Recommended)
+### Method 1: Local Folder (Recommended for Development)
 
-Use the provided installation script:
+This is the easiest method for local development and testing.
 
-```bash
-# Clone and build
-git clone https://github.com/yourusername/podman-desktop-stats-plugin.git
-cd podman-desktop-stats-plugin
-npm install
+1. **Enable Development Mode** in Podman Desktop:
+   - Open **Preferences/Settings**
+   - Enable **Development Mode** (or **Developer Mode**)
 
-# Package for Podman Desktop
-./install-extension.sh
-```
+2. **Build the extension**:
+   ```bash
+   git clone https://github.com/yourusername/podman-desktop-stats-plugin.git
+   cd podman-desktop-stats-plugin
+   npm install
+   npm run build
+   ```
 
-Then in **Podman Desktop**:
-1. Go to **Extensions**
-2. Click **Install from file...**
-3. Select: `packages/backend/podman-desktop-stats-1.0.0.tar`
-4. Click **Install**
-
-### Manual Installation
-
-1. Clone and install dependencies:
-```bash
-git clone https://github.com/yourusername/podman-desktop-stats-plugin.git
-cd podman-desktop-stats-plugin
-npm install
-```
-
-2. Build and package:
-```bash
-npm run build
-cd packages/backend
-podman build -t localhost/podman-desktop-stats:1.0.0 -f Containerfile .
-podman save localhost/podman-desktop-stats:1.0.0 -o podman-desktop-stats-1.0.0.tar
-```
-
-3. Install in Podman Desktop:
-   - Open Podman Desktop
+3. **Add to Podman Desktop**:
    - Go to **Extensions**
-   - Click **Install from file...**
-   - Select the `.tar` file created above
+   - Click **"Add local folder extension"**
+   - Select the folder: `packages/backend`
+   - The extension should load immediately
+
+See [INSTALL-SIMPLE.md](INSTALL-SIMPLE.md) for detailed instructions.
+
+### Method 2: OCI Image (For Distribution)
+
+For packaging and distribution:
+
+1. Build and package:
+   ```bash
+   npm install
+   npm run build
+   ./install-extension.sh
+   ```
+
+2. The script creates: `packages/backend/podman-desktop-stats-1.0.0.tar`
+
+3. Share this file or publish to a container registry
+
+See [INSTALLATION.md](INSTALLATION.md) for advanced installation methods
 
 ## Development
 
