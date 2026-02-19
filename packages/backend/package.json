@@ -6,8 +6,11 @@
   "publisher": "dhenry",
   "license": "Apache-2.0",
   "icon": "icon.png",
+  "categories": [
+    "Monitoring"
+  ],
   "engines": {
-    "podman-desktop": "^1.17.0"
+    "podman-desktop": ">=1.0.0"
   },
   "main": "./dist/extension.js",
   "contributes": {
