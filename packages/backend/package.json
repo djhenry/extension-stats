@@ -5,7 +5,6 @@
   "version": "1.0.0",
   "publisher": "dhenry",
   "license": "Apache-2.0",
-  "type": "module",
   "icon": "icon.png",
   "engines": {
     "podman-desktop": "^1.17.0"
