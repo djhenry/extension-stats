@@ -28,7 +28,9 @@
   "scripts": {
     "build": "vite build",
     "watch": "vite build --watch",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "package": "podman build -t localhost/podman-desktop-stats:1.0.0 -f Containerfile .",
+    "package:load": "npm run package && podman save localhost/podman-desktop-stats:1.0.0 -o ../podman-desktop-stats-1.0.0.tar"
   },
   "dependencies": {
     "@podman-desktop-stats/shared": "*"
