@@ -1,9 +1,9 @@
 // packages/backend/src/stats-calculator.ts
-import type * as podmanDesktopAPI from '@podman-desktop/api';
+import type { ContainerInfo, ContainerStatsInfo } from '@podman-desktop/api';
 import type { ProcessedContainerStats } from '@podman-desktop-stats/shared';
 
 export function computeCpuPercent(
-  stats: podmanDesktopAPI.ContainerStatsInfo,
+  stats: ContainerStatsInfo,
 ): number {
   const cpuDelta =
     stats.cpu_stats.cpu_usage.total_usage -
@@ -18,7 +18,7 @@ export function computeCpuPercent(
 }
 
 export function computeMemoryUsage(
-  stats: podmanDesktopAPI.ContainerStatsInfo,
+  stats: ContainerStatsInfo,
 ): { used: number; limit: number; percent: number } {
   const used = stats.memory_stats.usage ?? 0;
   const limit = stats.memory_stats.limit ?? 0;
@@ -32,7 +32,7 @@ export function computeMemoryUsage(
 }
 
 export function computeNetworkIO(
-  stats: podmanDesktopAPI.ContainerStatsInfo,
+  stats: ContainerStatsInfo,
 ): { rx: number; tx: number } {
   let rx = 0;
   let tx = 0;
@@ -49,7 +49,7 @@ export function computeNetworkIO(
 }
 
 export function computeBlockIO(
-  stats: podmanDesktopAPI.ContainerStatsInfo,
+  stats: ContainerStatsInfo,
 ): { read: number; write: number } {
   let read = 0;
   let write = 0;
@@ -72,8 +72,8 @@ export function computeBlockIO(
 }
 
 export function computeContainerStats(
-  container: podmanDesktopAPI.ContainerInfo,
-  stats: podmanDesktopAPI.ContainerStatsInfo,
+  container: ContainerInfo,
+  stats: ContainerStatsInfo,
   _previous: ProcessedContainerStats | undefined,
 ): ProcessedContainerStats {
   const cpuUsagePercent = computeCpuPercent(stats);

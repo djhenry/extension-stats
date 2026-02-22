@@ -1,26 +1,27 @@
 // packages/backend/src/adapters/container-engine-adapter.ts
-import * as podmanDesktopAPI from '@podman-desktop/api';
+import type { ContainerInfo, ContainerStatsInfo, Disposable } from '@podman-desktop/api';
+import * as extensionApi from '@podman-desktop/api';
 
 export interface ContainerEnginePort {
-  listContainers(): Promise<podmanDesktopAPI.ContainerInfo[]>;
+  listContainers(): Promise<ContainerInfo[]>;
   statsContainer(
     engineId: string,
     containerId: string,
-    callback: (stats: podmanDesktopAPI.ContainerStatsInfo) => void,
-  ): Promise<podmanDesktopAPI.Disposable>;
+    callback: (stats: ContainerStatsInfo) => void,
+  ): Promise<Disposable>;
 }
 
 export class PodmanDesktopContainerEngine implements ContainerEnginePort {
-  async listContainers(): Promise<podmanDesktopAPI.ContainerInfo[]> {
-    return podmanDesktopAPI.containerEngine.listContainers();
+  async listContainers(): Promise<ContainerInfo[]> {
+    return extensionApi.containerEngine.listContainers();
   }
 
   async statsContainer(
     engineId: string,
     containerId: string,
-    callback: (stats: podmanDesktopAPI.ContainerStatsInfo) => void,
-  ): Promise<podmanDesktopAPI.Disposable> {
-    return podmanDesktopAPI.containerEngine.statsContainer(
+    callback: (stats: ContainerStatsInfo) => void,
+  ): Promise<Disposable> {
+    return extensionApi.containerEngine.statsContainer(
       engineId,
       containerId,
       callback,

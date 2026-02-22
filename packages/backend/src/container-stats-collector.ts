@@ -1,12 +1,12 @@
 // packages/backend/src/container-stats-collector.ts
-import type * as podmanDesktopAPI from '@podman-desktop/api';
+import type { ContainerInfo, ContainerStatsInfo, Disposable } from '@podman-desktop/api';
 import type { ProcessedContainerStats } from '@podman-desktop-stats/shared';
 import { computeContainerStats } from './stats-calculator';
 import type { ContainerEnginePort } from './adapters/container-engine-adapter';
 
 export class ContainerStatsCollector {
   private statsMap: Map<string, ProcessedContainerStats> = new Map();
-  private disposables: Map<string, podmanDesktopAPI.Disposable> = new Map();
+  private disposables: Map<string, Disposable> = new Map();
 
   constructor(private engine: ContainerEnginePort) {}
 
@@ -20,7 +20,7 @@ export class ContainerStatsCollector {
   }
 
   private async subscribeToContainer(
-    container: podmanDesktopAPI.ContainerInfo,
+    container: ContainerInfo,
   ): Promise<void> {
     const key = container.Id;
     if (this.disposables.has(key)) return;
@@ -29,7 +29,7 @@ export class ContainerStatsCollector {
       const disposable = await this.engine.statsContainer(
         container.engineId,
         container.Id,
-        (stats: podmanDesktopAPI.ContainerStatsInfo) => {
+        (stats: ContainerStatsInfo) => {
           const processed = computeContainerStats(
             container,
             stats,
