@@ -1,4 +1,4 @@
-# podman-desktop-stats-plugin — Technical Architecture
+# extension-stats — Technical Architecture
 
 **Version**: 1.0.0
 **Date**: 2026-02-18
@@ -39,7 +39,7 @@
 
 ### 1.1 Purpose
 
-The podman-desktop-stats-plugin is a Podman Desktop extension that provides real-time container and host system resource monitoring through a dedicated dashboard page. It solves the problem of developers needing to leave Podman Desktop and switch to the terminal to run `podman stats` or use external monitoring tools to understand container resource consumption.
+The extension-stats is a Podman Desktop extension that provides real-time container and host system resource monitoring through a dedicated dashboard page. It solves the problem of developers needing to leave Podman Desktop and switch to the terminal to run `podman stats` or use external monitoring tools to understand container resource consumption.
 
 The extension polls the Podman container engine via the `@podman-desktop/api` `containerEngine.statsContainer` method and the Node.js `os` module for host-level metrics, then renders the data in a Svelte-based webview dashboard embedded in Podman Desktop.
 
@@ -91,7 +91,7 @@ graph TB
 
     subgraph "Podman Desktop"
         PD_API["Podman Desktop<br/>Extension API"]
-        PLUGIN["podman-desktop-stats-plugin<br/>v1.0.0"]
+        PLUGIN["extension-stats<br/>v1.0.0"]
         WEBVIEW["Dashboard Webview<br/>(Svelte)"]
     end
 
@@ -361,7 +361,7 @@ export async function deactivate(): Promise<void> {
 
 ```typescript
 // packages/backend/src/stats-manager.ts
-import { ContainerStats, HostStats, StatsSnapshot } from '@podman-desktop-stats/shared';
+import { ContainerStats, HostStats, StatsSnapshot } from '@extension-stats/shared';
 import { ConfigManager } from './config-manager';
 
 export interface StatsListener {
@@ -455,7 +455,7 @@ flowchart TD
 ```typescript
 // packages/backend/src/container-stats-collector.ts
 import * as podmanDesktopAPI from '@podman-desktop/api';
-import { ProcessedContainerStats } from '@podman-desktop-stats/shared';
+import { ProcessedContainerStats } from '@extension-stats/shared';
 import { computeContainerStats } from './stats-calculator';
 
 export class ContainerStatsCollector {
@@ -544,7 +544,7 @@ export class ContainerStatsCollector {
 ```typescript
 // packages/backend/src/host-stats-collector.ts
 import * as os from 'node:os';
-import { HostStats, CpuTimes } from '@podman-desktop-stats/shared';
+import { HostStats, CpuTimes } from '@extension-stats/shared';
 
 export class HostStatsCollector {
   private previousCpuTimes: CpuTimes | undefined;
@@ -653,7 +653,7 @@ export class ConfigManager {
 ```typescript
 // packages/backend/src/rpc-bridge.ts
 import * as podmanDesktopAPI from '@podman-desktop/api';
-import { StatsSnapshot, RpcMessage, RpcCommand } from '@podman-desktop-stats/shared';
+import { StatsSnapshot, RpcMessage, RpcCommand } from '@extension-stats/shared';
 import { StatsManager, StatsListener } from './stats-manager';
 
 export class RpcBridge implements StatsListener, podmanDesktopAPI.Disposable {
@@ -867,7 +867,7 @@ export interface CpuTimes {
 ```typescript
 // packages/backend/src/stats-calculator.ts
 import * as podmanDesktopAPI from '@podman-desktop/api';
-import { ProcessedContainerStats } from '@podman-desktop-stats/shared';
+import { ProcessedContainerStats } from '@extension-stats/shared';
 
 export function computeCpuPercent(
   stats: podmanDesktopAPI.ContainerStatsInfo,
@@ -1204,7 +1204,7 @@ The `ContainerStatsCollector` maintains a `Map<string, ProcessedContainerStats>`
 ```typescript
 // packages/frontend/src/stores/stats-store.ts
 import { writable } from 'svelte/store';
-import type { StatsSnapshot } from '@podman-desktop-stats/shared';
+import type { StatsSnapshot } from '@extension-stats/shared';
 
 export const statsSnapshot = writable<StatsSnapshot | undefined>(undefined);
 
@@ -1319,7 +1319,7 @@ The build pipeline:
 ```json
 // packages/backend/package.json (extension manifest fields)
 {
-  "name": "podman-desktop-stats",
+  "name": "extension-stats",
   "displayName": "Container Stats",
   "description": "Real-time container and host resource monitoring dashboard",
   "version": "1.0.0",
@@ -1427,7 +1427,7 @@ No asynchronous cleanup is needed — all operations are synchronous disposal.
 ## 14. Project Structure
 
 ```
-podman-desktop-stats-plugin/
+extension-stats/
 ├── packages/
 │   ├── backend/                         # Extension host process code
 │   │   ├── src/

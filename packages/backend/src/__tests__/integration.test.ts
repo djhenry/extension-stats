@@ -7,7 +7,7 @@ import { RpcBridge } from '../rpc-bridge';
 import { createMockContainerInfo, createMockStatsInfo } from './fixtures';
 import type { ContainerEnginePort } from '../adapters/container-engine-adapter';
 import type { OsPort } from '../adapters/os-adapter';
-import type { StatsSnapshot } from '@podman-desktop-stats/shared';
+import type { StatsSnapshot } from '@extension-stats/shared';
 
 describe('Integration: Full backend pipeline', () => {
   beforeEach(() => {

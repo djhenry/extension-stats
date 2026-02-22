@@ -29,7 +29,7 @@ cd packages/backend
 # Build OCI image
 npm run package
 
-# This creates: localhost/podman-desktop-stats:1.0.0
+# This creates: localhost/extension-stats:1.0.0
 ```
 
 ### Step 3: Install in Podman Desktop
@@ -41,7 +41,7 @@ npm run package
 3. Click **Install custom...**
 4. Enter the image reference:
    ```
-   localhost/podman-desktop-stats:1.0.0
+   localhost/extension-stats:1.0.0
    ```
 5. Click **Install**
 
@@ -52,7 +52,7 @@ npm run package
 cd packages/backend
 npm run package:load
 
-# This creates: packages/podman-desktop-stats-1.0.0.tar
+# This creates: packages/extension-stats-1.0.0.tar
 ```
 
 Then in Podman Desktop:
@@ -70,7 +70,7 @@ Once published to a container registry:
 3. Click **Install custom...**
 4. Enter:
    ```
-   ghcr.io/yourusername/podman-desktop-stats:1.0.0
+   ghcr.io/yourusername/extension-stats:1.0.0
    ```
 5. Click **Install**
 
@@ -90,8 +90,8 @@ Some versions of Podman Desktop support loading extensions from a directory:
 2. **Create a symlink** to your built extension:
    ```bash
    # Linux/macOS example
-   ln -s /home/dhenry/git/podman-desktop-stats-plugin/packages/backend \
-         ~/.local/share/containers/podman-desktop/extensions/podman-desktop-stats
+   ln -s /home/dhenry/git/extension-stats/packages/backend \
+         ~/.local/share/containers/podman-desktop/extensions/extension-stats
    ```
 
 3. **Restart Podman Desktop**
@@ -143,7 +143,7 @@ After installation, verify the extension is working:
 **Solutions**:
 - Restart Podman Desktop
 - Check Podman Desktop version (requires 1.17.0+)
-- Verify the OCI image was built: `podman images | grep podman-desktop-stats`
+- Verify the OCI image was built: `podman images | grep extension-stats`
 - Check extension logs in Developer Tools
 
 ### Build Fails
@@ -153,7 +153,7 @@ After installation, verify the extension is working:
 **Solutions**:
 ```bash
 # Ensure extension is built first
-cd /home/dhenry/git/podman-desktop-stats-plugin
+cd /home/dhenry/git/extension-stats
 npm run build
 
 # Check that dist/ and media/ exist
@@ -214,4 +214,4 @@ Or use the **Reload** button if available (preserves settings).
 
 - See [README.md](README.md) for usage instructions
 - See [CLAUDE.md](CLAUDE.md) for development details
-- Report issues: https://github.com/yourusername/podman-desktop-stats-plugin/issues
+- Report issues: https://github.com/yourusername/extension-stats/issues

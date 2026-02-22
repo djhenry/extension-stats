@@ -1,4 +1,4 @@
-# podman-desktop-stats-plugin — Development Specification v1.0.0
+# extension-stats — Development Specification v1.0.0
 
 **Version**: 1.0.0
 **Date**: 2026-02-18
@@ -192,7 +192,7 @@ Initialize the project structure with npm workspaces, TypeScript configurations,
 
 ```json
 {
-  "name": "podman-desktop-stats-plugin",
+  "name": "extension-stats",
   "private": true,
   "version": "1.0.0",
   "workspaces": [
@@ -1720,7 +1720,7 @@ describe('StatsManager', () => {
 // packages/backend/src/__tests__/rpc-bridge.test.ts
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { RpcBridge } from '../rpc-bridge';
-import type { StatsSnapshot } from '@podman-desktop-stats/shared';
+import type { StatsSnapshot } from '@extension-stats/shared';
 
 describe('RpcBridge', () => {
   let mockWebview: any;
@@ -2129,7 +2129,7 @@ import { RpcBridge } from '../rpc-bridge';
 import { createMockContainerInfo, createMockStatsInfo } from './fixtures';
 import type { ContainerEnginePort } from '../adapters/container-engine-adapter';
 import type { OsPort } from '../adapters/os-adapter';
-import type { StatsSnapshot } from '@podman-desktop-stats/shared';
+import type { StatsSnapshot } from '@extension-stats/shared';
 
 describe('Integration: Full backend pipeline', () => {
   beforeEach(() => {

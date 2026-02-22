@@ -8,7 +8,7 @@ import { render, screen, cleanup, waitFor } from '@testing-library/svelte';
 import { get } from 'svelte/store';
 import App from '../App.svelte';
 import { statsSnapshot, initStatsListener } from '../stores/stats-store';
-import type { StatsSnapshot, RpcMessage } from '@podman-desktop-stats/shared';
+import type { StatsSnapshot, RpcMessage } from '@extension-stats/shared';
 
 function createMockSnapshot(): StatsSnapshot {
   return {

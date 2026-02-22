@@ -1,6 +1,6 @@
 // packages/frontend/src/stores/stats-store.ts
 import { writable } from 'svelte/store';
-import type { StatsSnapshot } from '@podman-desktop-stats/shared';
+import type { StatsSnapshot } from '@extension-stats/shared';
 
 export const statsSnapshot = writable<StatsSnapshot | undefined>(undefined);
 

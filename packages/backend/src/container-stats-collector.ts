@@ -1,6 +1,6 @@
 // packages/backend/src/container-stats-collector.ts
 import type { ContainerInfo, ContainerStatsInfo, Disposable } from '@podman-desktop/api';
-import type { ProcessedContainerStats } from '@podman-desktop-stats/shared';
+import type { ProcessedContainerStats } from '@extension-stats/shared';
 import { computeContainerStats } from './stats-calculator';
 import type { ContainerEnginePort } from './adapters/container-engine-adapter';
 

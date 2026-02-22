@@ -1,7 +1,7 @@
 // packages/backend/src/__tests__/rpc-bridge.test.ts
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { RpcBridge } from '../rpc-bridge';
-import type { StatsSnapshot } from '@podman-desktop-stats/shared';
+import type { StatsSnapshot } from '@extension-stats/shared';
 
 describe('RpcBridge', () => {
   let mockWebview: any;

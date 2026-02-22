@@ -1,5 +1,5 @@
 // packages/backend/src/stats-manager.ts
-import type { StatsSnapshot } from '@podman-desktop-stats/shared';
+import type { StatsSnapshot } from '@extension-stats/shared';
 import type { ConfigManager } from './config-manager';
 import type { ContainerStatsCollector } from './container-stats-collector';
 import type { HostStatsCollector } from './host-stats-collector';

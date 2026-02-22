@@ -1,5 +1,5 @@
 {
-  "name": "@podman-desktop-stats/shared",
+  "name": "@extension-stats/shared",
   "version": "1.0.0",
   "type": "module",
   "main": "./dist/index.js",

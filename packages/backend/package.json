@@ -1,5 +1,5 @@
 {
-  "name": "podman-desktop-stats",
+  "name": "extension-stats",
   "displayName": "Container Stats",
   "description": "Real-time container and host resource monitoring dashboard",
   "version": "1.0.0",
@@ -31,11 +31,11 @@
     "build": "vite build",
     "watch": "vite build --watch",
     "typecheck": "tsc --noEmit",
-    "package": "podman build -t localhost/podman-desktop-stats:1.0.0 -f Containerfile .",
-    "package:load": "npm run package && podman save localhost/podman-desktop-stats:1.0.0 -o ../podman-desktop-stats-1.0.0.tar"
+    "package": "podman build -t localhost/extension-stats:1.0.0 -f Containerfile .",
+    "package:load": "npm run package && podman save localhost/extension-stats:1.0.0 -o ../extension-stats-1.0.0.tar"
   },
   "dependencies": {
-    "@podman-desktop-stats/shared": "*"
+    "@extension-stats/shared": "*"
   },
   "devDependencies": {
     "@podman-desktop/api": "latest",

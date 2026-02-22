@@ -1,5 +1,5 @@
 {
-  "name": "@podman-desktop-stats/frontend",
+  "name": "@extension-stats/frontend",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
@@ -10,7 +10,7 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@podman-desktop-stats/shared": "*",
+    "@extension-stats/shared": "*",
     "@podman-desktop/ui-svelte": "^1.22.0",
     "svelte": "^5.0.0"
   },

@@ -4,7 +4,7 @@ import { render, screen, cleanup } from '@testing-library/svelte';
 import { get } from 'svelte/store';
 import Dashboard from '../Dashboard.svelte';
 import { statsSnapshot, initStatsListener } from '../stores/stats-store';
-import type { StatsSnapshot } from '@podman-desktop-stats/shared';
+import type { StatsSnapshot } from '@extension-stats/shared';
 
 function createMockSnapshot(overrides?: Partial<StatsSnapshot>): StatsSnapshot {
   return {

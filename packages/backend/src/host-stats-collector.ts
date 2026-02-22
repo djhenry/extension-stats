@@ -1,5 +1,5 @@
 // packages/backend/src/host-stats-collector.ts
-import type { HostStats, CpuTimes } from '@podman-desktop-stats/shared';
+import type { HostStats, CpuTimes } from '@extension-stats/shared';
 import type { OsPort } from './adapters/os-adapter';
 
 export class HostStatsCollector {

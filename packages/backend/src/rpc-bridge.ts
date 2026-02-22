@@ -1,6 +1,6 @@
 // packages/backend/src/rpc-bridge.ts
 import type { Disposable, Webview } from '@podman-desktop/api';
-import type { StatsSnapshot, RpcMessage, RpcCommand } from '@podman-desktop-stats/shared';
+import type { StatsSnapshot, RpcMessage, RpcCommand } from '@extension-stats/shared';
 import type { StatsManager, StatsListener } from './stats-manager';
 
 export class RpcBridge implements StatsListener {

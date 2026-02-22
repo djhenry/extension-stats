@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { ContainerStats } from '@podman-desktop-stats/shared';
+  import type { ContainerStats } from '@extension-stats/shared';
 
   interface Props {
     containers: ContainerStats[];

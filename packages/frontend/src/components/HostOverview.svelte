@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { HostStats } from '@podman-desktop-stats/shared';
+  import type { HostStats } from '@extension-stats/shared';
   import StatsBar from './StatsBar.svelte';
 
   interface Props {

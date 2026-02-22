@@ -8,15 +8,15 @@ npm run build
 
 echo "📦 Packaging as OCI image..."
 cd packages/backend
-podman build -t localhost/podman-desktop-stats:1.0.0 -f Containerfile .
+podman build -t localhost/extension-stats:1.0.0 -f Containerfile .
 
 echo "💾 Exporting to tarball..."
-podman save localhost/podman-desktop-stats:1.0.0 -o podman-desktop-stats-1.0.0.tar
+podman save localhost/extension-stats:1.0.0 -o extension-stats-1.0.0.tar
 
 echo "✅ Extension packaged successfully!"
 echo ""
 echo "📍 Extension file location:"
-echo "   $(pwd)/podman-desktop-stats-1.0.0.tar"
+echo "   $(pwd)/extension-stats-1.0.0.tar"
 echo ""
 echo "📥 To install in Podman Desktop:"
 echo "   1. Open Podman Desktop"

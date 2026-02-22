@@ -22,8 +22,8 @@ This is the easiest method for local development and testing.
 
 2. **Build the extension**:
    ```bash
-   git clone https://github.com/yourusername/podman-desktop-stats-plugin.git
-   cd podman-desktop-stats-plugin
+   git clone https://github.com/yourusername/extension-stats.git
+   cd extension-stats
    npm install
    npm run build
    ```
@@ -47,7 +47,7 @@ For packaging and distribution:
    ./install-extension.sh
    ```
 
-2. The script creates: `packages/backend/podman-desktop-stats-1.0.0.tar`
+2. The script creates: `packages/backend/extension-stats-1.0.0.tar`
 
 3. Share this file or publish to a container registry
 
@@ -92,7 +92,7 @@ npm run watch
 ### Project Structure
 
 ```
-podman-desktop-stats-plugin/
+extension-stats/
 ├── packages/
 │   ├── shared/          # Shared types and utilities
 │   ├── backend/         # Extension backend (Node.js)
@@ -163,8 +163,8 @@ MIT License - see [LICENSE](LICENSE) file for details
 
 ## Support
 
-- **Issues**: https://github.com/yourusername/podman-desktop-stats-plugin/issues
-- **Discussions**: https://github.com/yourusername/podman-desktop-stats-plugin/discussions
+- **Issues**: https://github.com/yourusername/extension-stats/issues
+- **Discussions**: https://github.com/yourusername/extension-stats/discussions
 - **Podman Desktop Docs**: https://podman-desktop.io/docs
 
 ## Acknowledgments

@@ -1,6 +1,6 @@
 # Project Kickoff Document
 
-**Project Name**: podman-desktop-stats-plugin
+**Project Name**: extension-stats
 **JIRA Ticket**: N/A
 **Date**: 2026-02-18
 **Team**: Personal Project (dhenry)
@@ -218,7 +218,7 @@ N/A for v1.0 (planned for v1.2.0).
 ## 10. Version Control
 
 ### 10.1 Repository
-- **URL**: https://github.com/dhenry/podman-desktop-stats-plugin (TBD)
+- **URL**: https://github.com/dhenry/extension-stats (TBD)
 - **Branch Strategy**: Feature branches merged to main
 - **Tag Format**: Semver: 1.0.0
 

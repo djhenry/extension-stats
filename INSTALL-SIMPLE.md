@@ -13,7 +13,7 @@ This is the easiest way to install and test the extension.
 ### Step 2: Build the Extension
 
 ```bash
-cd /home/dhenry/git/podman-desktop-stats-plugin
+cd /home/dhenry/git/extension-stats
 npm install
 npm run build
 ```
@@ -29,7 +29,7 @@ This creates:
 3. Click it
 4. Navigate to and select:
    ```
-   /home/dhenry/git/podman-desktop-stats-plugin/packages/backend
+   /home/dhenry/git/extension-stats/packages/backend
    ```
 5. Click **Open** or **Select Folder**
 

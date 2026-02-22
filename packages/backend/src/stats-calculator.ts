@@ -1,6 +1,6 @@
 // packages/backend/src/stats-calculator.ts
 import type { ContainerInfo, ContainerStatsInfo } from '@podman-desktop/api';
-import type { ProcessedContainerStats } from '@podman-desktop-stats/shared';
+import type { ProcessedContainerStats } from '@extension-stats/shared';
 
 export function computeCpuPercent(
   stats: ContainerStatsInfo,
