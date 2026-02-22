@@ -120,20 +120,20 @@ graph LR
 | C34 | StatsManager | 4.2 | S6 | `packages/backend/src/stats-manager.ts` | `packages/backend/src/__tests__/stats-manager.test.ts` | ✅ Done |
 | C35 | RpcBridge | 4.6 | S6 | `packages/backend/src/rpc-bridge.ts` | `packages/backend/src/__tests__/rpc-bridge.test.ts` | ✅ Done |
 | C36 | extension.ts (activate/deactivate) | 4.1 | S7 | `packages/backend/src/extension.ts` | `packages/backend/src/__tests__/extension.test.ts` | ✅ Done |
-| C37 | stats-store.ts (Svelte store) | 8.3 | S8 | `packages/frontend/src/stores/stats-store.ts` | `packages/frontend/src/__tests__/stats-store.test.ts` | Pending |
-| C38 | App.svelte | 14 | S8 | `packages/frontend/src/App.svelte` | N/A (root mount) | Pending |
-| C39 | Dashboard.svelte | 19.3 | S8 | `packages/frontend/src/Dashboard.svelte` | `packages/frontend/src/__tests__/Dashboard.test.ts` | Pending |
-| C40 | HostOverview.svelte | 19.2 | S8 | `packages/frontend/src/components/HostOverview.svelte` | `packages/frontend/src/__tests__/HostOverview.test.ts` | Pending |
-| C41 | ContainerTable.svelte | 19.2 | S8 | `packages/frontend/src/components/ContainerTable.svelte` | `packages/frontend/src/__tests__/ContainerTable.test.ts` | Pending |
-| C42 | ContainerRow.svelte | 19.2 | S8 | `packages/frontend/src/components/ContainerRow.svelte` | `packages/frontend/src/__tests__/ContainerRow.test.ts` | Pending |
-| C43 | StatsBar.svelte | 19.2 | S8 | `packages/frontend/src/components/StatsBar.svelte` | `packages/frontend/src/__tests__/StatsBar.test.ts` | Pending |
-| C44 | SettingsBar.svelte | 19.2 | S8 | `packages/frontend/src/components/SettingsBar.svelte` | `packages/frontend/src/__tests__/SettingsBar.test.ts` | Pending |
-| C45 | Frontend index.html | 14 | S8 | `packages/frontend/index.html` | N/A | Pending |
-| C46 | Integration tests | 15 | S9 | `packages/backend/src/__tests__/integration.test.ts` | (self) | Pending |
-| C47 | README.md | 9 | S10 | `README.md` | N/A (doc) | Pending |
-| C48 | CLAUDE.md | 9 | S10 | `CLAUDE.md` | N/A (doc) | Pending |
-| C49 | CHANGELOG.md | 9 | S10 | `CHANGELOG.md` | N/A (doc) | Pending |
-| C50 | GitHub Actions CI | 11 | S10 | `.github/workflows/ci.yml` | N/A (CI config) | Pending |
+| C37 | stats-store.ts (Svelte store) | 8.3 | S8 | `packages/frontend/src/stores/stats-store.ts` | `packages/frontend/src/__tests__/stats-store.test.ts` | ✅ Done |
+| C38 | App.svelte | 14 | S8 | `packages/frontend/src/App.svelte` | N/A (root mount) | ✅ Done |
+| C39 | Dashboard.svelte | 19.3 | S8 | `packages/frontend/src/Dashboard.svelte` | `packages/frontend/src/__tests__/Dashboard.test.ts` | ✅ Done |
+| C40 | HostOverview.svelte | 19.2 | S8 | `packages/frontend/src/components/HostOverview.svelte` | `packages/frontend/src/__tests__/HostOverview.test.ts` | ✅ Done |
+| C41 | ContainerTable.svelte | 19.2 | S8 | `packages/frontend/src/components/ContainerTable.svelte` | `packages/frontend/src/__tests__/ContainerTable.test.ts` | ✅ Done |
+| C42 | ContainerRow.svelte | 19.2 | S8 | `packages/frontend/src/components/ContainerRow.svelte` | `packages/frontend/src/__tests__/ContainerRow.test.ts` | ✅ Done |
+| C43 | StatsBar.svelte | 19.2 | S8 | `packages/frontend/src/components/StatsBar.svelte` | `packages/frontend/src/__tests__/StatsBar.test.ts` | ✅ Done |
+| C44 | SettingsBar.svelte | 19.2 | S8 | `packages/frontend/src/components/SettingsBar.svelte` | `packages/frontend/src/__tests__/SettingsBar.test.ts` | ✅ Done |
+| C45 | Frontend index.html | 14 | S8 | `packages/frontend/index.html` | N/A | ✅ Done |
+| C46 | Integration tests | 15 | S9 | `packages/backend/src/__tests__/integration.test.ts` | (self) | ✅ Done |
+| C47 | README.md | 9 | S10 | `README.md` | N/A (doc) | ✅ Done |
+| C48 | CLAUDE.md | 9 | S10 | `CLAUDE.md` | N/A (doc) | ✅ Done |
+| C49 | CHANGELOG.md | 9 | S10 | `CHANGELOG.md` | N/A (doc) | ✅ Done |
+| C50 | GitHub Actions CI | 11 | S10 | `.github/workflows/ci.yml` | N/A (CI config) | ✅ Done |
 
 **Total**: 50 components
 
@@ -2351,8 +2351,8 @@ jobs:
 
 | Version | Components | Completed | Pending |
 |---------|-----------|-----------|---------|
-| v1.0.0 | 50 (C01-C50) | 9 | 41 |
-| **Total** | **50** | **9** | **41** |
+| v1.0.0 | 50 (C01-C50) | 50 | 0 |
+| **Total** | **50** | **50** | **0** |
 
 ---
 
