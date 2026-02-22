@@ -1,9 +1,11 @@
 import { defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
+import tailwindcss from '@tailwindcss/vite';
 import { resolve } from 'path';
 
 export default defineConfig({
-  plugins: [svelte({ hot: !process.env.VITEST })],
+  plugins: [svelte({ hot: !process.env.VITEST }), tailwindcss()],
+  base: './',
   build: {
     outDir: '../backend/media',
     emptyOutDir: true,
