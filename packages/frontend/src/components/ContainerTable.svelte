@@ -19,46 +19,43 @@
 </script>
 
 <div class="space-y-4">
-  <h2 class="text-xl font-bold">Container Stats</h2>
+  <h2 class="text-xl font-bold capitalize text-[var(--pd-content-header)]">Container Stats</h2>
 
   {#if containers.length === 0}
-    <div class="text-center text-gray-500 dark:text-gray-400 py-8">
+    <div class="text-center text-[var(--pd-content-card-text)] py-8">
       No running containers
     </div>
   {:else}
-    <div class="overflow-x-auto">
-      <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-        <thead class="bg-gray-50 dark:bg-gray-800">
-          <tr>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">Name</th>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">CPU %</th>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">Memory</th>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">Mem %</th>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">Net RX</th>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">Net TX</th>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">Block R</th>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">Block W</th>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">PIDs</th>
-          </tr>
-        </thead>
-        <tbody class="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-700">
-          {#each containers as container}
-            <tr>
-              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">{container.name}</td>
-              <td class="px-6 py-4 whitespace-nowrap text-sm">{container.cpuUsagePercent.toFixed(1)}%</td>
-              <td class="px-6 py-4 whitespace-nowrap text-sm">
-                {formatBytes(container.memoryUsed)} / {formatBytes(container.memoryLimit)}
-              </td>
-              <td class="px-6 py-4 whitespace-nowrap text-sm">{container.memoryUsagePercent.toFixed(1)}%</td>
-              <td class="px-6 py-4 whitespace-nowrap text-sm">{formatBytes(container.networkRx)}</td>
-              <td class="px-6 py-4 whitespace-nowrap text-sm">{formatBytes(container.networkTx)}</td>
-              <td class="px-6 py-4 whitespace-nowrap text-sm">{formatBytes(container.blockRead)}</td>
-              <td class="px-6 py-4 whitespace-nowrap text-sm">{formatBytes(container.blockWrite)}</td>
-              <td class="px-6 py-4 whitespace-nowrap text-sm">{container.pids}</td>
-            </tr>
-          {/each}
-        </tbody>
-      </table>
+    <div class="overflow-x-auto" role="table" aria-label="container stats">
+      <!-- Header row -->
+      <div class="flex items-center h-7 uppercase text-sm font-semibold text-[var(--pd-table-header-text)] mb-1 px-4" role="row">
+        <div class="flex-[2] min-w-0" role="columnheader">Name</div>
+        <div class="flex-1 min-w-0 text-right" role="columnheader">CPU %</div>
+        <div class="flex-[2] min-w-0 text-right" role="columnheader">Memory</div>
+        <div class="flex-1 min-w-0 text-right" role="columnheader">Mem %</div>
+        <div class="flex-1 min-w-0 text-right" role="columnheader">Net RX</div>
+        <div class="flex-1 min-w-0 text-right" role="columnheader">Net TX</div>
+        <div class="flex-1 min-w-0 text-right" role="columnheader">Block R</div>
+        <div class="flex-1 min-w-0 text-right" role="columnheader">Block W</div>
+        <div class="flex-1 min-w-0 text-right" role="columnheader">PIDs</div>
+      </div>
+
+      <!-- Body rows -->
+      {#each containers as container}
+        <div class="flex items-center min-h-[48px] bg-[var(--pd-content-card-bg)] rounded-lg mb-2 border border-[var(--pd-content-table-border)] hover:bg-[var(--pd-content-card-hover-bg)] px-4 py-1.5" role="row">
+          <div class="flex-[2] min-w-0 whitespace-nowrap overflow-hidden text-ellipsis text-base text-[var(--pd-table-body-text-highlight)]" role="cell">{container.name}</div>
+          <div class="flex-1 min-w-0 text-right whitespace-nowrap text-base text-[var(--pd-table-body-text)]" role="cell">{container.cpuUsagePercent.toFixed(1)}%</div>
+          <div class="flex-[2] min-w-0 text-right whitespace-nowrap text-base text-[var(--pd-table-body-text)]" role="cell">
+            {formatBytes(container.memoryUsed)} / {formatBytes(container.memoryLimit)}
+          </div>
+          <div class="flex-1 min-w-0 text-right whitespace-nowrap text-base text-[var(--pd-table-body-text)]" role="cell">{container.memoryUsagePercent.toFixed(1)}%</div>
+          <div class="flex-1 min-w-0 text-right whitespace-nowrap text-base text-[var(--pd-table-body-text)]" role="cell">{formatBytes(container.networkRx)}</div>
+          <div class="flex-1 min-w-0 text-right whitespace-nowrap text-base text-[var(--pd-table-body-text)]" role="cell">{formatBytes(container.networkTx)}</div>
+          <div class="flex-1 min-w-0 text-right whitespace-nowrap text-base text-[var(--pd-table-body-text)]" role="cell">{formatBytes(container.blockRead)}</div>
+          <div class="flex-1 min-w-0 text-right whitespace-nowrap text-base text-[var(--pd-table-body-text)]" role="cell">{formatBytes(container.blockWrite)}</div>
+          <div class="flex-1 min-w-0 text-right whitespace-nowrap text-base text-[var(--pd-table-body-text)]" role="cell">{container.pids}</div>
+        </div>
+      {/each}
     </div>
   {/if}
 </div>

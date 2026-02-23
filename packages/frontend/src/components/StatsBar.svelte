@@ -14,10 +14,10 @@
   aria-valuenow={value}
   aria-valuemin={0}
   aria-valuemax={max}
-  class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
+  class="w-full bg-[var(--pd-content-divider)] rounded-full h-2.5 mt-2"
 >
   <div
-    class="bg-blue-600 h-2.5 rounded-full"
+    class="bg-[var(--pd-state-info)] h-2.5 rounded-full"
     style="width: {percentage}%"
   ></div>
 </div>

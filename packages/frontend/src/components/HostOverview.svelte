@@ -28,35 +28,35 @@
 </script>
 
 <div class="space-y-4">
-  <h2 class="text-xl font-bold">Host System Overview</h2>
+  <h2 class="text-xl font-bold capitalize text-[var(--pd-content-header)]">Host System Overview</h2>
 
   <div class="grid grid-cols-4 gap-4">
     <!-- CPU Usage -->
-    <div class="p-4 bg-gray-100 dark:bg-gray-800 rounded">
-      <div class="text-sm text-gray-600 dark:text-gray-400">CPU</div>
-      <div class="text-2xl font-bold">{stats.cpuUsagePercent.toFixed(1)}%</div>
+    <div class="p-4 bg-[var(--pd-content-card-bg)] rounded-md">
+      <div class="text-sm text-[var(--pd-content-card-text)]">CPU</div>
+      <div class="text-2xl font-medium text-[var(--pd-content-card-title)]">{stats.cpuUsagePercent.toFixed(1)}%</div>
       <StatsBar value={stats.cpuUsagePercent} max={100} />
     </div>
 
     <!-- Memory -->
-    <div class="p-4 bg-gray-100 dark:bg-gray-800 rounded">
-      <div class="text-sm text-gray-600 dark:text-gray-400">Memory</div>
-      <div class="text-lg font-bold">
+    <div class="p-4 bg-[var(--pd-content-card-bg)] rounded-md">
+      <div class="text-sm text-[var(--pd-content-card-text)]">Memory</div>
+      <div class="text-lg font-medium text-[var(--pd-content-card-title)]">
         {formatBytes(stats.memoryUsed)} / {formatBytes(stats.memoryTotal)}
       </div>
       <StatsBar value={stats.memoryUsed} max={stats.memoryTotal} />
     </div>
 
     <!-- CPU Cores -->
-    <div class="p-4 bg-gray-100 dark:bg-gray-800 rounded">
-      <div class="text-sm text-gray-600 dark:text-gray-400">Cores</div>
-      <div class="text-2xl font-bold">{stats.cpuCount} cores</div>
+    <div class="p-4 bg-[var(--pd-content-card-bg)] rounded-md">
+      <div class="text-sm text-[var(--pd-content-card-text)]">Cores</div>
+      <div class="text-2xl font-medium text-[var(--pd-content-card-title)]">{stats.cpuCount} cores</div>
     </div>
 
     <!-- Uptime -->
-    <div class="p-4 bg-gray-100 dark:bg-gray-800 rounded">
-      <div class="text-sm text-gray-600 dark:text-gray-400">Uptime</div>
-      <div class="text-2xl font-bold">{formatUptime(stats.uptime)}</div>
+    <div class="p-4 bg-[var(--pd-content-card-bg)] rounded-md">
+      <div class="text-sm text-[var(--pd-content-card-text)]">Uptime</div>
+      <div class="text-2xl font-medium text-[var(--pd-content-card-title)]">{formatUptime(stats.uptime)}</div>
     </div>
   </div>
 </div>

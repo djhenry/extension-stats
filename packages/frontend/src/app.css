@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+/*
+ * Override Tailwind's default font-size scale to match Podman Desktop's
+ * custom tailwind.config.cjs values. Without this, standard Tailwind classes
+ * (text-sm = 14px, text-base = 16px, text-xl = 20px) produce sizes that
+ * are visibly larger than PD's native tabs (text-sm = 11px, text-base = 12px,
+ * text-xl = 16px).
+ */
+@theme {
+  --text-xs: 10px;
+  --text-sm: 11px;
+  --text-base: 12px;
+  --text-lg: 14px;
+  --text-xl: 16px;
+  --text-2xl: 18px;
+  --text-3xl: 20px;
+  --text-4xl: 24px;
+  --text-5xl: 30px;
+  --text-6xl: 36px;
+}
