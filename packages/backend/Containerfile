@@ -1,7 +1,7 @@
 FROM scratch
 LABEL org.opencontainers.image.title="Container Stats" \
       org.opencontainers.image.description="Real-time container and host resource monitoring dashboard" \
-      org.opencontainers.image.vendor="dhenry" \
+      org.opencontainers.image.vendor="podman-desktop" \
       io.podman-desktop.api.version=">= 1.0.0"
 
 COPY package.json /extension/
