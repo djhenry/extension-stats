@@ -14,6 +14,7 @@ export default defineConfig({
       '**/dist/**',
       '**/media/**',
       'packages/frontend/**',
+      'tests/**',
     ],
     coverage: {
       provider: 'v8',

@@ -15,7 +15,8 @@
     "test:coverage": "vitest run --coverage",
     "typecheck": "npm run typecheck --workspaces",
     "lint": "eslint . --ext .ts,.svelte",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "test:e2e": "cd tests/playwright && npm run test:e2e"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^8.0.0",

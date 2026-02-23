@@ -55,6 +55,58 @@ vi.mock('node:fs', () => ({
 
 import { activate, deactivate } from '../extension';
 import * as extensionApi from '@podman-desktop/api';
+import path from 'node:path';
+
+const actualFs = await vi.importActual<typeof import('node:fs')>('node:fs');
+const backendRoot = path.resolve(__dirname, '..', '..');
+
+describe('Extension manifest (package.json)', () => {
+  const manifest = JSON.parse(
+    actualFs.readFileSync(path.join(backendRoot, 'package.json'), 'utf-8'),
+  );
+
+  it('should have an icon field', () => {
+    expect(manifest.icon).toBeDefined();
+  });
+
+  it('should reference icon files that exist on disk', () => {
+    const icon = manifest.icon;
+    if (typeof icon === 'string') {
+      expect(actualFs.existsSync(path.join(backendRoot, icon))).toBe(true);
+    } else {
+      expect(icon).toHaveProperty('light');
+      expect(icon).toHaveProperty('dark');
+      expect(actualFs.existsSync(path.join(backendRoot, icon.light))).toBe(true);
+      expect(actualFs.existsSync(path.join(backendRoot, icon.dark))).toBe(true);
+    }
+  });
+
+  it('should have icon files that are valid PNG images', () => {
+    const icon = manifest.icon;
+    const pngMagic = Buffer.from([0x89, 0x50, 0x4e, 0x47]);
+    const files = typeof icon === 'string' ? [icon] : [icon.light, icon.dark];
+
+    for (const file of files) {
+      const buf = actualFs.readFileSync(path.join(backendRoot, file));
+      expect(buf.subarray(0, 4).equals(pngMagic)).toBe(true);
+    }
+  });
+
+  it('should have icon files in 8-bit RGBA color format for Electron compatibility', () => {
+    const icon = manifest.icon;
+    const files = typeof icon === 'string' ? [icon] : [icon.light, icon.dark];
+
+    for (const file of files) {
+      const buf = actualFs.readFileSync(path.join(backendRoot, file));
+      // PNG IHDR chunk starts at byte 8, color type is at byte 25, bit depth at byte 24
+      const bitDepth = buf[24];
+      const colorType = buf[25];
+      // colorType 6 = RGBA, bitDepth 8 = standard 8-bit
+      expect(bitDepth).toBe(8);
+      expect(colorType).toBe(6);
+    }
+  });
+});
 
 describe('Extension lifecycle', () => {
   let mockContext: any;
@@ -99,5 +151,15 @@ describe('Extension lifecycle', () => {
   it('should use Uri.joinPath for resource paths', async () => {
     await activate(mockContext);
     expect(extensionApi.Uri.joinPath).toHaveBeenCalled();
+  });
+
+  it('should set iconPath on the webview panel for sidebar icon', async () => {
+    await activate(mockContext);
+    const mockPanel = (extensionApi.window.createWebviewPanel as any).mock.results[0].value;
+    expect(mockPanel.iconPath).toBeDefined();
+    // Must be a single Uri (not { light, dark }) because PD's webview-registry
+    // only serializes single Uri icons for the sidebar navigation.
+    expect(mockPanel.iconPath).toHaveProperty('fsPath');
+    expect(mockPanel.iconPath.fsPath).toContain('icon.png');
   });
 });

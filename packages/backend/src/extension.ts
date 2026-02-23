@@ -25,6 +25,11 @@ export async function activate(
     },
   );
 
+  // Set sidebar icon
+  // Note: PD's webview-registry only serializes single Uri icons for the sidebar nav,
+  // so we use a single icon rather than { light, dark } variants.
+  panel.iconPath = extensionApi.Uri.joinPath(extensionContext.extensionUri, 'icon.png');
+
   // Load and set the webview HTML
   const indexHtmlUri = extensionApi.Uri.joinPath(extensionContext.extensionUri, 'media', 'index.html');
   const indexHtmlPath = indexHtmlUri.fsPath;

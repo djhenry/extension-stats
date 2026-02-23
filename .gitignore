@@ -4,3 +4,7 @@ packages/backend/media/
 coverage/
 *.tgz
 .DS_Store
+tests/playwright/output/
+tests/playwright/test-results/
+playwright-report/
+test-results/

@@ -1,0 +1,18 @@
+{
+  "name": "extension-stats-tests-playwright",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright E2E tests for the Container Stats extension",
+  "type": "module",
+  "scripts": {
+    "test:e2e:setup": "xvfb-maybe --auto-servernum --server-args='-screen 0 1280x960x24' --",
+    "test:e2e": "npm run test:e2e:setup playwright test src/"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.0",
+    "@podman-desktop/tests-playwright": "^1.25.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.7.0",
+    "xvfb-maybe": "^0.2.1"
+  }
+}
