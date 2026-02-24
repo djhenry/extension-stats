@@ -2,7 +2,7 @@
   "name": "extension-stats",
   "displayName": "Container Stats",
   "description": "Real-time container and host resource monitoring dashboard",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "dhenry",
   "license": "Apache-2.0",
   "repository": "https://github.com/djhenry/extension-stats",
