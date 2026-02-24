@@ -31,8 +31,8 @@
     "build": "vite build",
     "watch": "vite build --watch",
     "typecheck": "tsc --noEmit",
-    "package": "podman build -t localhost/extension-stats:1.0.0 -f Containerfile .",
-    "package:load": "npm run package && podman save localhost/extension-stats:1.0.0 -o ../extension-stats-1.0.0.tar"
+    "package": "podman build -t ghcr.io/djhenry/extension-stats:$(node -p \"require('./package.json').version\") -f Containerfile .",
+    "package:load": "npm run package && podman save ghcr.io/djhenry/extension-stats:$(node -p \"require('./package.json').version\") -o ../extension-stats-$(node -p \"require('./package.json').version\").tar"
   },
   "dependencies": {
     "@extension-stats/shared": "*"
