@@ -90,7 +90,7 @@ Some versions of Podman Desktop support loading extensions from a directory:
 2. **Create a symlink** to your built extension:
    ```bash
    # Linux/macOS example
-   ln -s /home/dhenry/git/extension-stats/packages/backend \
+   ln -s /path/to/extension-stats/packages/backend \
          ~/.local/share/containers/podman-desktop/extensions/extension-stats
    ```
 
@@ -153,7 +153,7 @@ After installation, verify the extension is working:
 **Solutions**:
 ```bash
 # Ensure extension is built first
-cd /home/dhenry/git/extension-stats
+cd /path/to/extension-stats
 npm run build
 
 # Check that dist/ and media/ exist

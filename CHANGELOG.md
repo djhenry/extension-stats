@@ -100,4 +100,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-[1.0.0]: https://github.com/yourusername/extension-stats/releases/tag/v1.0.0
+[1.0.0]: https://github.com/djhenry/extension-stats/releases/tag/v1.0.0

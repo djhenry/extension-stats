@@ -5,6 +5,8 @@
   "version": "1.0.0",
   "publisher": "dhenry",
   "license": "Apache-2.0",
+  "repository": "https://github.com/djhenry/extension-stats",
+  "bugs": "https://github.com/djhenry/extension-stats/issues",
   "icon": "icon.png",
   "categories": [
     "Monitoring"
