@@ -22,7 +22,7 @@ This is the easiest method for local development and testing.
 
 2. **Build the extension**:
    ```bash
-   git clone https://github.com/yourusername/extension-stats.git
+   git clone https://github.com/djhenry/extension-stats.git
    cd extension-stats
    npm install
    npm run build
@@ -36,20 +36,17 @@ This is the easiest method for local development and testing.
 
 See [INSTALL-SIMPLE.md](INSTALL-SIMPLE.md) for detailed instructions.
 
-### Method 2: OCI Image (For Distribution)
+### Method 2: OCI Image (Recommended for Users)
 
-For packaging and distribution:
+Install directly from the published OCI image:
 
-1. Build and package:
-   ```bash
-   npm install
-   npm run build
-   ./install-extension.sh
+1. Open Podman Desktop
+2. Go to **Extensions** → **Install custom...**
+3. Enter:
    ```
-
-2. The script creates: `packages/backend/extension-stats-1.0.0.tar`
-
-3. Share this file or publish to a container registry
+   ghcr.io/djhenry/extension-stats:latest
+   ```
+4. Click **Install**
 
 See [INSTALLATION.md](INSTALLATION.md) for advanced installation methods
 
@@ -159,12 +156,12 @@ Configure the refresh interval in Podman Desktop settings:
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) file for details
+Apache-2.0 License - see [LICENSE](LICENSE) file for details
 
 ## Support
 
-- **Issues**: https://github.com/yourusername/extension-stats/issues
-- **Discussions**: https://github.com/yourusername/extension-stats/discussions
+- **Issues**: https://github.com/djhenry/extension-stats/issues
+- **Discussions**: https://github.com/djhenry/extension-stats/discussions
 - **Podman Desktop Docs**: https://podman-desktop.io/docs
 
 ## Acknowledgments

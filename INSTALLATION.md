@@ -8,9 +8,24 @@ This guide covers different ways to install the Container Stats extension in Pod
 - Node.js 20+ and npm 10+ (for building from source)
 - Podman CLI (for creating OCI images)
 
-## Method 1: Install from OCI Image (Recommended)
+## Method 1: Install from Registry (Recommended)
 
-This is the standard way to install Podman Desktop extensions.
+Install directly from the published OCI image on ghcr.io:
+
+1. Open Podman Desktop
+2. Go to **Extensions**
+3. Click **Install custom...**
+4. Enter:
+   ```
+   ghcr.io/djhenry/extension-stats:latest
+   ```
+5. Click **Install**
+
+You can also pin a specific version (e.g. `ghcr.io/djhenry/extension-stats:1.0.0`).
+
+## Method 2: Build and Install from OCI Image
+
+Build the OCI image locally and install it:
 
 ### Step 1: Build the Extension
 
@@ -28,20 +43,18 @@ cd packages/backend
 
 # Build OCI image
 npm run package
-
-# This creates: localhost/extension-stats:1.0.0
 ```
 
 ### Step 3: Install in Podman Desktop
 
-**Option A: Install from Local Registry**
+**Option A: Install from Local Image**
 
 1. Open Podman Desktop
 2. Go to **Extensions**
 3. Click **Install custom...**
 4. Enter the image reference:
    ```
-   localhost/extension-stats:1.0.0
+   ghcr.io/djhenry/extension-stats:1.0.0
    ```
 5. Click **Install**
 
@@ -52,7 +65,7 @@ npm run package
 cd packages/backend
 npm run package:load
 
-# This creates: packages/extension-stats-1.0.0.tar
+# This creates: packages/extension-stats-<version>.tar
 ```
 
 Then in Podman Desktop:
@@ -60,19 +73,6 @@ Then in Podman Desktop:
 2. Click **Install from file...**
 3. Select the `.tar` file
 4. Click **Install**
-
-## Method 2: Install from Registry (Future)
-
-Once published to a container registry:
-
-1. Open Podman Desktop
-2. Go to **Extensions**
-3. Click **Install custom...**
-4. Enter:
-   ```
-   ghcr.io/yourusername/extension-stats:1.0.0
-   ```
-5. Click **Install**
 
 ## Method 3: Development Mode (For Active Development)
 
@@ -214,4 +214,4 @@ Or use the **Reload** button if available (preserves settings).
 
 - See [README.md](README.md) for usage instructions
 - See [CLAUDE.md](CLAUDE.md) for development details
-- Report issues: https://github.com/yourusername/extension-stats/issues
+- Report issues: https://github.com/djhenry/extension-stats/issues
